@@ -15,16 +15,18 @@
       so as to enable zero-budget developers to build WinMerge from sources using Visual C++ Express editions.
     </description>
     <projectUrl>https://bitbucket.org/jtuc/winmerge2011</projectUrl>
+    <packageSourceUrl>https://chocolatey.org/packages/winmerge2011.portable/</packageSourceUrl>
+    <projectSourceUrl>https://bitbucket.org/jtuc/winmerge2011</projectSourceUrl>
+    <bugTrackerUrl>https://bitbucket.org/jtuc/winmerge2011/issues</bugTrackerUrl>
     <tags>winmerge winmerge2011 diff merge admin</tags>
     <copyright></copyright>
     <licenseUrl>https://bitbucket.org/jtuc/winmerge2011/src/d7701825280c0050adb7808abfd28d0d6f8b06b0/Src/COPYING?at={{PackageVersion}}</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
-    <!--<iconUrl>http://cdn.rawgit.com/__CHOCO_PKG_MAINTAINER_REPO__/master/icons/__NAME__.png</iconUrl>-->
+    <iconUrl>https://bytebucket.org/coldacid/chocolatey-packages/raw/ac7a2349584bf5b3002811ede8ba95d386c76580/winmerge2011/winmerge2011_128x128.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
-    <releaseNotes></releaseNotes>
+    <releaseNotes>https://bitbucket.org/jtuc/winmerge2011/src/d7701825280c0050adb7808abfd28d0d6f8b06b0/Docs/Users/CHANGES?at=0.2011.005.427</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
