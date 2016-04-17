@@ -26,7 +26,7 @@
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
-    <releaseNotes>https://bitbucket.org/jtuc/winmerge2011/src/d7701825280c0050adb7808abfd28d0d6f8b06b0/Docs/Users/CHANGES?at=0.2011.005.427</releaseNotes>
+    <releaseNotes>https://bitbucket.org/jtuc/winmerge2011/src/d7701825280c0050adb7808abfd28d0d6f8b06b0/Docs/Users/CHANGES?at={{PackageVersion}}</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
