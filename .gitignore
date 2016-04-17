@@ -4,6 +4,8 @@ _output/
 # Other generated packages
 *.nupkg
 
+tmp/
+
 # Created by https://www.gitignore.io/api/windows
 
 ### Windows ###
