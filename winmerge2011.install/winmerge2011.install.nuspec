@@ -15,7 +15,7 @@
       so as to enable zero-budget developers to build WinMerge from sources using Visual C++ Express editions.
     </description>
     <projectUrl>https://bitbucket.org/jtuc/winmerge2011</projectUrl>
-    <packageSourceUrl>https://chocolatey.org/packages/winmerge2011.portable/</packageSourceUrl>
+    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <projectSourceUrl>https://bitbucket.org/jtuc/winmerge2011</projectSourceUrl>
     <bugTrackerUrl>https://bitbucket.org/jtuc/winmerge2011/issues</bugTrackerUrl>
     <tags>winmerge winmerge2011 diff merge admin</tags>
