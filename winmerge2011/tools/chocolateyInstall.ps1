@@ -1,0 +1,1 @@
+﻿#Install-VirtualPackage 'winmerge2011.portable' 'winmerge2011.install'

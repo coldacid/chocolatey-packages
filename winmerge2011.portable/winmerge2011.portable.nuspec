@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>winmerge2011.portable</id>
+    <title>WinMerge2011 (Portable)</title>
+    <version>{{PackageVersion}}</version>
+    <authors>Jochen Neubeck</authors>
+    <owners>Chris Charabaruk</owners>
+    <summary>WinMerge2011 is a fork of the original WinMerge 2.x application for comparing and merging files and directories.</summary>
+    <description>
+      The WinMerge 2011 series is a fork of the original WinMerge application published on SourceForge by Thingamahoochie Software.
+      It is an escape from the complex situation that exists with respect to WinMerge 2.x. ATL/MFC dependencies have also been removed
+      so as to enable zero-budget developers to build WinMerge from sources using Visual C++ Express editions.
+    </description>
+    <projectUrl>https://bitbucket.org/jtuc/winmerge2011</projectUrl>
+    <tags>winmerge winmerge2011 diff merge</tags>
+    <copyright></copyright>
+    <licenseUrl>https://bitbucket.org/jtuc/winmerge2011/src/d7701825280c0050adb7808abfd28d0d6f8b06b0/Src/COPYING?at={{PackageVersion}}</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
+    <!--<iconUrl>http://cdn.rawgit.com/__CHOCO_PKG_MAINTAINER_REPO__/master/icons/__NAME__.png</iconUrl>-->
+    <!--<dependencies>
+      <dependency id="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
