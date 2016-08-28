@@ -8,7 +8,7 @@ $version = "{{PackageVersion}}"
 $zip_file = "pgadmin3-${version}.zip"
 $zip_url  = "{{DownloadUrl}}"
 $msi_file = "pgadmin3.msi"
-
+$checksum = "{{Checksum}}"
 
 
 $chocTempDir   = Join-Path $env:TEMP "chocolatey"
@@ -36,19 +36,21 @@ if ("x$env:ChocolateyInstall" -eq "x") {
 
 if (![System.IO.Directory]::Exists($tempDir)) {[System.IO.Directory]::CreateDirectory($tempDir)}
 
-try {  
+try {
   Write-Host ""
   Write-Host "Downloading $packageName"
   Write-Host "  * Zip File Temp: $zip_file_temp"
   Write-Host "  * Zip URL......: $zip_url"
   Write-Host ""
-# Get-ChocolateyWebFile $packageName   $fileFullPath  $url     $url64bit 
-#                       -checksum $checksum -checksumType $checksumType 
+# Get-ChocolateyWebFile $packageName   $fileFullPath  $url     $url64bit
+#                       -checksum $checksum -checksumType $checksumType
 #                       -checksum64 $checksum64 -checksumType64 $checksumType64
-  Get-ChocolateyWebFile "$packageName" $zip_file_temp $zip_url $zip_url
+  Get-ChocolateyWebFile "$packageName" $zip_file_temp $zip_url $zip_url `
+                        -checksum $checksum -checksumType sha256 `
+                        -checksum64 $checksum -checksumType64 sha256
 } catch {
   Write-ChocolateyFailure "$packageName" "Could not download zip file to $zip_file_temp. REASON: $($_.Exception.Message)"
-  throw 
+  throw
 }
 
 
@@ -73,11 +75,11 @@ try {
   throw
 }
 
-try {  
+try {
   Install-ChocolateyPackage "$packageName" "$installerType" $silentArgs $msi_file_temp -validExitCodes $validExitCodes
 } catch {
   Write-ChocolateyFailure "$packageName" "Could not install msi. REASON: $($_.Exception.Message)"
-  throw 
+  throw
 }
 
   Write-ChocolateySuccess "$packageName"
