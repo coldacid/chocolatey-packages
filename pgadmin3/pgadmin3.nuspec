@@ -16,8 +16,6 @@ pgAdmin is designed to answer the needs of all users, from writing simple SQL qu
     <summary>pgAdmin3</summary>
     <releaseNotes />
     <mailingListUrl>https://www.pgadmin.org/support/list.php</mailingListUrl>
-    <bugTrackerUrl>https://redmine.postgresql.org/projects/pgadmin4</bugTrackerUrl>
-    <projectSourceUrl>https://git.postgresql.org/gitweb/?p=pgadmin4.git</projectSourceUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <copyright>1996-2016 The PostgreSQL Global Development Group</copyright>
     <tags>pgadmin3 pgadmin postgres postgresql admin</tags>
