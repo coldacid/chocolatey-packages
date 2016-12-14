@@ -46,3 +46,5 @@ if (Test-Path $env:VS140COMNTOOLS -PathType Container) {
 if (Test-Path $env:VS150COMNTOOLS -PathType Container) {
   Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 15
 }
+
+New-Item "$zipDir\SandcastleInstaller.exe.ignore" -Type file -Force | Out-Null
