@@ -26,25 +26,21 @@ $packageArgs = @{
 Install-ChocolateyInstallPackage @packageArgs
 
 # Install-ChocolateyVsixPackage requires a URL, so build one out of the file path
-$vsix = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage.vsix"
+$vsix = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2013.vsix"
 $vsixUrl = "file:///" + $(Convert-Path $vsix).Replace("\", "/")
+$vsix14 = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2015AndLater.vsix"
+$vsixUrl14 = "file:///" + $(Convert-Path $vsix14).Replace("\", "/")
 
 # Install-ChocolateyVsixPackage doesn't let us provide a list of supported versions for a package, unfortunately
 # Check for each version supported by the Sandcastle tools VSIX and call the function repeatedly as needed
-if ($env:VS100COMNTOOLS -And (Test-Path $env:VS100COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 10
-}
-if ($env:VS110COMNTOOLS -And (Test-Path $env:VS110COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 11
-}
 if ($env:VS120COMNTOOLS -And (Test-Path $env:VS120COMNTOOLS -PathType Container)) {
   Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 12
 }
 if ($env:VS140COMNTOOLS -And (Test-Path $env:VS140COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 14
+  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 14
 }
 if ($env:VS150COMNTOOLS -And (Test-Path $env:VS150COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 15
+  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 15
 }
 
 New-Item "$zipDir\SandcastleInstaller.exe.ignore" -Type file -Force | Out-Null
