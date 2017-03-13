@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>git-lfs-bitbucket-adapter</id>
+    <version>{{PackageVersion}}</version>
+    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
+    <owners>Chris Charabaruk</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>Bitbucket LFS Media Adapter</title>
+    <authors>Atlassian</authors>
+    <projectUrl>https://confluence.atlassian.com/bitbucket/bitbucket-lfs-media-adapter-856699998.html</projectUrl>
+    <iconUrl>https://bytebucket.org/coldacid/chocolatey-packages/raw/master/git-lfs-bitbucket-adapter/bitbucket-128x128.png</iconUrl>
+    <copyright>Copyright © 2017 Atlassian</copyright>
+    <tags>git lfs vcs dvcs version-control cli bitbucket</tags>
+    <summary>Git LFS adapter for repositories on Bitbucket Cloud.</summary>
+    <description>
+This custom transfer adapter for [Git LFS](https://git-lfs.github.com) speeds up
+uploads and downloads to/from [Bitbucket Cloud](https://bitbucket.org).
+
+**Please Note**: This is an automatically updated package. If you find it is
+out of date by more than a day or two, please contact the maintainer(s) and
+let them know the package is no longer updating correctly.
+    </description>
+    <releaseNotes>
+### 1.0.5
+
+- Fix problem with single files larger than ~7.8GB
+
+### 1.0.4
+
+- Changes to support updated Media API
+
+### 1.0.2
+
+- Fix bug when `TEMP` is on a different physical drive to the Git repo
+
+### 1.0.1
+
+- Report Go version used to build adapter in `--version` output
+
+### 1.0.0
+
+- Initial release
+    </releaseNotes>
+    <!-- =============================== -->
+
+    <dependencies>
+      <dependency id="git-lfs" version="1.3.0" />
+      <dependency id="git" version="1.8.5" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
