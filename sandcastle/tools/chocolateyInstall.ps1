@@ -43,7 +43,7 @@ Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEac
       throw "A process is blocking the installation of the Sandcastle extension for " + $_.displayName + ". Please close all instances and try again."
     }
     if ($exitCode -gt 0 -and $exitCode -ne 1001) { #1001: Already installed
-      throw "There was an error installing the Sandcastle extension for " + $_.displayName + ". The exit code returned was $result."
+      throw "There was an error installing the Sandcastle extension for " + $_.displayName + ". The exit code returned was $exitCode."
     }
   } elseif ( $_.installationVersion.Major -eq 14 ) {
     Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 14
