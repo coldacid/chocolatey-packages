@@ -28,10 +28,10 @@ $packageArgs = @{
 Install-ChocolateyInstallPackage @packageArgs
 
 # Install-ChocolateyVsixPackage requires a URL, so build one out of the file path
-$vsix = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2013.vsix"
+$vsix = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2015AndLater.vsix"
 $vsixUrl = "file:///" + $(Convert-Path $vsix).Replace("\", "/")
-$vsix14 = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2015AndLater.vsix"
-$vsixUrl14 = "file:///" + $(Convert-Path $vsix14).Replace("\", "/")
+$vsix12 = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2013.vsix"
+$vsix12Url = "file:///" + $(Convert-Path $vsix12).Replace("\", "/")
 
 # Install-ChocolateyVsixPackage doesn't let us provide a list of supported versions for a package, unfortunately
 # Check for each version supported by the Sandcastle tools VSIX and call the function repeatedly as needed
@@ -46,7 +46,7 @@ Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEac
     Write-Host "    SKU is '$vssku'"
     Write-Host "    Installation path is " $_.installationPath
 
-    $exitCode = Install-VsixEXT "$vsixInstaller" "$vsix14" "$vsver" "$vssku"
+    $exitCode = Install-VsixEXT "$vsixInstaller" "$vsix" "$vsver" "$vssku"
     if ($exitCode -eq 2004) { #2004: Blocking Process (need to close VS)
       throw "A process is blocking the installation of the Sandcastle extension for " + $_.displayName + ". Please close all instances and try again."
     }
@@ -54,9 +54,9 @@ Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEac
       throw "There was an error installing the Sandcastle extension for " + $_.displayName + ". The exit code returned was $exitCode."
     }
   } elseif ( $_.installationVersion.Major -eq 14 ) {
-    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 14
-  } else {
-    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion $_.installationVersion.Major
+    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 14
+  } elseif ( $_.installationVersion.Major -eq 12 ) {
+    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl12" -VsVersion 12
   }
 }
 
