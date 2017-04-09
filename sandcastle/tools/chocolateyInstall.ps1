@@ -36,9 +36,17 @@ $vsixUrl14 = "file:///" + $(Convert-Path $vsix14).Replace("\", "/")
 # Install-ChocolateyVsixPackage doesn't let us provide a list of supported versions for a package, unfortunately
 # Check for each version supported by the Sandcastle tools VSIX and call the function repeatedly as needed
 Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEach-Object {
+  $vsver = $_.installationVersion.ToString(2)
+  Write-Host "Installing VSIX package for Visual Studio $vsver"
+
   if ( $_.installationVersion.Major -ge 15 ) {
+    $vssku = Split-Path $_.installationPath -Leaf
     $vsixInstaller = Join-Path $_.installationPath 'Common7\IDE\VSIXInstaller.exe'
-    $exitCode = Install-Vsix "$vsixInstaller" "$vsix14"
+
+    Write-Host "    SKU is '$vssku'"
+    Write-Host "    Installation path is " $_.installationPath
+
+    $exitCode = Install-VsixEXT "$vsixInstaller" "$vsix14" "$vsver" "$vssku"
     if ($exitCode -eq 2004) { #2004: Blocking Process (need to close VS)
       throw "A process is blocking the installation of the Sandcastle extension for " + $_.displayName + ". Please close all instances and try again."
     }
