@@ -1,3 +1,6 @@
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+. $toolsPath\helpers.ps1
+
 # stop on all errors
 $ErrorActionPreference = 'Stop';
 
@@ -6,9 +9,8 @@ $versionNumber = '{{PackageVersion}}'
 $url           = '{{DownloadUrl}}' # download url
 $checksum      = "{{Checksum}}"
 
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$zipFile = Join-Path $toolsDir ('SHFBInstaller_v' + $versionNumber + '.zip')
-$zipDir = Join-Path $toolsDir ('SHFBInstaller_v' + $versionNumber)
+$zipFile = Join-Path $toolsPath ('SHFBInstaller_v' + $versionNumber + '.zip')
+$zipDir = Join-Path $toolsPath ('SHFBInstaller_v' + $versionNumber)
 
 Get-ChocolateyWebFile "$packageName" "$zipFile" "$url" `
                       -Checksum "$checksum" -ChecksumType 'sha256'
@@ -33,14 +35,21 @@ $vsixUrl14 = "file:///" + $(Convert-Path $vsix14).Replace("\", "/")
 
 # Install-ChocolateyVsixPackage doesn't let us provide a list of supported versions for a package, unfortunately
 # Check for each version supported by the Sandcastle tools VSIX and call the function repeatedly as needed
-if ($env:VS120COMNTOOLS -And (Test-Path $env:VS120COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 12
-}
-if ($env:VS140COMNTOOLS -And (Test-Path $env:VS140COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 14
-}
-if ($env:VS150COMNTOOLS -And (Test-Path $env:VS150COMNTOOLS -PathType Container)) {
-  Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 15
+Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEach-Object {
+  if ( $_.installationVersion.Major -ge 15 ) {
+    $vsixInstaller = Join-Path $_.installationPath 'Common7\IDE\VSIXInstaller.exe'
+    $exitCode = Install-Vsix "$vsixInstaller" "$vsix14"
+    if ($exitCode -eq 2004) { #2004: Blocking Process (need to close VS)
+      throw "A process is blocking the installation of the Sandcastle extension for " + $_.displayName + ". Please close all instances and try again."
+    }
+    if ($exitCode -gt 0 -and $exitCode -ne 1001) { #1001: Already installed
+      throw "There was an error installing the Sandcastle extension for " + $_.displayName + ". The exit code returned was $result."
+    }
+  } elseif ( $_.installationVersion.Major -eq 14 ) {
+    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl14" -VsVersion 14
+  } else {
+    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion $_.installationVersion.Major
+  }
 }
 
 New-Item "$zipDir\SandcastleInstaller.exe.ignore" -Type file -Force | Out-Null

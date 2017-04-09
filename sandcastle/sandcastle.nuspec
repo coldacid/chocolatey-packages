@@ -23,6 +23,7 @@ The Sandcastle Help File Builder was created to fill in the gaps, provide the mi
     <tags>SHFB documentation sandcastle help XML comments file builder admin</tags>
     <dependencies>
       <dependency id="dotnet4.0" version="4.0.30319" />
+      <dependency id="vswhere" version="1.0.58" />
     </dependencies>
   </metadata>
 </package>
