@@ -18,12 +18,9 @@
     <tags>git lfs vcs dvcs version-control cli bitbucket</tags>
     <summary>Git LFS adapter for repositories on Bitbucket Cloud.</summary>
     <description>
-This custom transfer adapter for [Git LFS](https://git-lfs.github.com) speeds up
-uploads and downloads to/from [Bitbucket Cloud](https://bitbucket.org).
+This custom transfer adapter for [Git LFS](https://git-lfs.github.com) speeds up uploads and downloads to/from [Bitbucket Cloud](https://bitbucket.org).
 
-**Please Note**: This is an automatically updated package. If you find it is
-out of date by more than a day or two, please contact the maintainer(s) and
-let them know the package is no longer updating correctly.
+**Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
     <releaseNotes>
 ### 1.0.6
