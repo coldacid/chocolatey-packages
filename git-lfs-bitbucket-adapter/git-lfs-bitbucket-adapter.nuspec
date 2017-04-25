@@ -26,6 +26,10 @@ out of date by more than a day or two, please contact the maintainer(s) and
 let them know the package is no longer updating correctly.
     </description>
     <releaseNotes>
+### 1.0.6
+
+- Fix race condition which could cause a crash when uploading very large files
+
 ### 1.0.5
 
 - Fix problem with single files larger than ~7.8GB
