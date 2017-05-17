@@ -30,12 +30,10 @@ Install-ChocolateyInstallPackage @packageArgs
 # Install-ChocolateyVsixPackage requires a URL, so build one out of the file path
 $vsix = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2015AndLater.vsix"
 $vsixUrl = "file:///" + $(Convert-Path $vsix).Replace("\", "/")
-$vsix12 = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2013.vsix"
-$vsix12Url = "file:///" + $(Convert-Path $vsix12).Replace("\", "/")
 
 # Install-ChocolateyVsixPackage doesn't let us provide a list of supported versions for a package, unfortunately
 # Check for each version supported by the Sandcastle tools VSIX and call the function repeatedly as needed
-Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEach-Object {
+Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 14 } | ForEach-Object {
   $vsver = $_.installationVersion.ToString(2)
   Write-Host "Installing VSIX package for Visual Studio $vsver"
 
@@ -55,8 +53,6 @@ Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 12 } | ForEac
     }
   } elseif ( $_.installationVersion.Major -eq 14 ) {
     Install-ChocolateyVsixPackage "$packageName" "$vsixUrl" -VsVersion 14
-  } elseif ( $_.installationVersion.Major -eq 12 ) {
-    Install-ChocolateyVsixPackage "$packageName" "$vsixUrl12" -VsVersion 12
   }
 }
 
