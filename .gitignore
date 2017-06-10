@@ -1,5 +1,6 @@
-# Auto-generated packages
+# Sources and auto-generated packages
 _output/
+_work/
 
 # Other generated packages
 *.nupkg
