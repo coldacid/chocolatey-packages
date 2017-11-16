@@ -11,6 +11,11 @@ Install-ChocolateyZipPackage "$packageName" `
   -UnzipLocation "$installDir"
 
 # generate ignore and gui for executables
-New-Item "$installDir\WinMergeU.exe.gui" -Type file -Force | Out-Null
-New-Item "$installDir\tidy.exe.ignore" -Type file -Force | Out-Null
-New-Item "$installDir\Frhed\Frhed.exe.ignore" -Type file -Force | Out-Null
+Get-ChildItem -Path $installDir -Filter "*.exe" -Recurse | ForEach-Object {
+  $exe = $_.FullName
+  if ($_.BaseName -eq 'winmergeu') {
+    New-Item "${exe}.gui" -Type file -Force | Out-Null
+  } else {
+    New-Item "${exe}.ignore" -Type file -Force | Out-Null
+  }
+}
