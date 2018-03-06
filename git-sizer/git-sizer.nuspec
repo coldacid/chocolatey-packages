@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>git-sizer</id>
+    <version>{{PackageVersion}}</version>
+    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
+    <owners>Chris Charabaruk</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>git-sizer</title>
+    <authors>GitHub</authors>
+    <projectUrl>https://github.com/github/git-sizer</projectUrl>
+    <copyright>Copyright © 2018 GitHub</copyright>
+    <tags>git vcs dvcs version-control cli</tags>
+    <summary>Compute various size metrics for a Git repository, flagging those that might cause problems</summary>
+    <description>
+Is your Git repository bursting at the seams? `git-sizer` computes various size metrics for a Git repository, flagging those that might cause you problems or inconvenience.
+
+**Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+    </description>
+    <releaseNotes>
+### 1.0.0
+
+This is the first public release of `git-sizer`.
+    </releaseNotes>
+    <!-- =============================== -->
+
+    <dependencies>
+      <dependency id="git" version="1.8.5" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
