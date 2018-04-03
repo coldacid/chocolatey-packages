@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÅ½Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â doesnÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>gron</id>
+    <title>gron</title>
+    <version>0.5.1</version>
+    <authors>Tom Hudson</authors>
+    <owners>Chris Charabaruk</owners>
+    <summary>Make JSON greppable!</summary>
+    <description>Make JSON greppable!
+
+gron transforms JSON into discrete assignments to make it easier to `grep` for what you want and see the absolute 'path' to it.
+It eases the exploration of APIs that return large blobs of JSON but have terrible documentation.
+
+```
+▶ gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author"
+json[0].commit.author = {};
+json[0].commit.author.date = "2016-07-02T10:51:21Z";
+json[0].commit.author.email = "mail@tomnomnom.com";
+json[0].commit.author.name = "Tom Hudson";
+```
+
+gron can work backwards too, enabling you to turn your filtered data back into JSON:
+```
+▶ gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" | fgrep "commit.author" | gron --ungron
+[
+  {
+    "commit": {
+      "author": {
+        "date": "2016-07-02T10:51:21Z",
+        "email": "mail@tomnomnom.com",
+        "name": "Tom Hudson"
+      }
+    }
+  }
+]
+```
+
+> Disclaimer: the GitHub API has fantastic documentation, but it makes for a good example.
+</description>
+    <projectUrl>https://github.com/tomnomnom/gron</projectUrl>
+    <tags>command-line json grep cross-platform foss</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/tomnomnom/gron/blog/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>https://github.com/tomnomnom/gron/releases/tag/v0.5.1</releaseNotes>
+    <docsUrl>https://github.com/tomnomnom/gron/wiki</docsUrl>
+    <bugTrackerUrl>https://github.com/tomnomnom/gron/issues</bugTrackerUrl>
+    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

@@ -1,6 +1,9 @@
 # Sources and auto-generated packages
 _output/
 _work/
+*/tools/*.zip
+*/tools/*.msi
+*/tools/*.exe
 
 # Other generated packages
 *.nupkg
