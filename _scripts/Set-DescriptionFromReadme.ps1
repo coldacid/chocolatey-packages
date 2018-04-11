@@ -10,7 +10,6 @@
 .PARAMETER SkipFirst
   Number of start lines to skip from the README.md, by default 0.
 
-
 .PARAMETER SkipLast
   Number of end lines to skip from the README.md, by default 0.
 
@@ -25,8 +24,10 @@ function Set-DescriptionFromReadme([int]$SkipFirst=0, [int]$SkipLast=0) {
   $endIdx = $description.Length - $SkipLast
   $description = $description | select -Index ($SkipFirst..$endIdx) | Out-String
 
-  $nuspecFileName = $Latest.PackageName + ".nuspec"
-  $nu = gc $nuspecFileName -Raw
+  $nuspecFileName = Resolve-Path "*.nuspec"
+  # We force gc to read as UTF8, otherwise nuspec files will be treated as ANSI
+  # causing bogus/invalid characters to appear when non-ANSI characters are used.
+  $nu = gc $nuspecFileName -Encoding UTF8 -Raw
   $nu = $nu -replace "(?smi)(\<description\>).*?(\</description\>)", "`${1}$($description)`$2"
 
   $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False)
