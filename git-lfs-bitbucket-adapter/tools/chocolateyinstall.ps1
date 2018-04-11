@@ -1,28 +1,27 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$packageName= 'git-lfs-bitbucket-adapter' # arbitrary name for the package, used in messages
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = '{{DownloadUrl}}' # download url, HTTPS preferred
-$url64      = '{{DownloadUrlx64}}' # 64bit URL here (HTTPS preferred) or remove - if installer contains both (very rare), use $url
+$packageName = 'git-lfs-bitbucket-adapter'
+$toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$url         = 'https://downloads.atlassian.com/software/bitbucket/GitLfsBitbucketAdapter-windows-386-1.0.6.zip'
+$url64       = 'https://downloads.atlassian.com/software/bitbucket/GitLfsBitbucketAdapter-darwin-amd64-1.0.6.zip'
+$checksum    = 'ea51b5d258b745d877d84201ec182953c9ba98eb551c4b11b549768b654a62e4'
+$checksum64  = '724fb5f54bfaacf593f0bc79087067de8029890823e2f40ccf976898cfcab03b'
+$checksumType= 'sha256'
 
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
+
   url           = $url
   url64bit      = $url64
 
-  # Checksums are now required as of 0.10.0.
-  # To determine checksums, you can get that from the original site if provided.
-  # You can also use checksum.exe (choco install checksum) and use it
-  # e.g. checksum -t sha256 -f path\to\file
-  checksum      = '{{Checksum}}'
-  checksumType  = '{{ChecksumType}}' #default is md5, can also be sha1, sha256 or sha512
-  checksum64    = '{{Checksumx64}}'
-  checksumType64= '{{ChecksumTypex64}}' #default is checksumType
+  checksum      = $checksum
+  checksumType  = $checksumType
+  checksum64    = $checksum64
+  checksumType64= $checksumType
 }
 
-Install-ChocolateyZipPackage @packageArgs # https://chocolatey.org/docs/helpers-install-chocolatey-zip-package
+Install-ChocolateyZipPackage @packageArgs
 
 $adapter = $(Join-Path $toolsDir 'git-lfs-bitbucket-media-api').Replace('\', '/')
-
 git config --global lfs.customtransfer.bitbucket-media-api.path $adapter

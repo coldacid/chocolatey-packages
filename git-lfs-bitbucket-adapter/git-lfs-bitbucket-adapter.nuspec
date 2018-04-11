@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>git-lfs-bitbucket-adapter</id>
-    <version>{{PackageVersion}}</version>
+    <version>1.0.6</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
@@ -17,13 +17,13 @@
     <copyright>Copyright © 2017 Atlassian</copyright>
     <tags>git lfs vcs dvcs version-control cli bitbucket</tags>
     <summary>Git LFS adapter for repositories on Bitbucket Cloud.</summary>
-    <description>
+    <description>Take Git LFS to the next level
+
 This custom transfer adapter for [Git LFS](https://git-lfs.github.com) speeds up uploads and downloads to/from [Bitbucket Cloud](https://bitbucket.org).
 
 **Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-    </description>
-    <releaseNotes>
-### 1.0.6
+</description>
+    <releaseNotes>### 1.0.6
 
 - Fix race condition which could cause a crash when uploading very large files
 
@@ -46,7 +46,7 @@ This custom transfer adapter for [Git LFS](https://git-lfs.github.com) speeds up
 ### 1.0.0
 
 - Initial release
-    </releaseNotes>
+</releaseNotes>
     <!-- =============================== -->
 
     <dependencies>
