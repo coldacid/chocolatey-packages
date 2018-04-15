@@ -12,6 +12,9 @@
 .PARAMETER SkipLast
   Number of end lines to skip from content, by default 0.
 
+.PARAMETER CData
+  Place the release notes inside a CDATA section.
+
 .EXAMPLE
   function global:au_AfterUpdate  { Set-ReleaseNotes $changelog -SkipFirst 1 }
 #>
@@ -21,7 +24,8 @@ function Set-ReleaseNotes {
     [Alias("changelog")]
     $ReleaseNotes,
     [int]$SkipFirst=0,
-    [int]$SkipLast=0
+    [int]$SkipLast=0,
+    [switch]$UseCData
   )
 
   Write-Host 'Setting Nuspec releaseNotes tag'
@@ -33,7 +37,11 @@ function Set-ReleaseNotes {
   # We force gc to read as UTF8, otherwise nuspec files will be treated as ANSI
   # causing bogus/invalid characters to appear when non-ANSI characters are used.
   $nu = gc $nuspecFileName -Encoding UTF8 -Raw
-  $nu = $nu -replace "(?smi)(\<releaseNotes\>).*?(\</releaseNotes\>)", "`${1}$($releaseNotes)`$2"
+  if ($UseCData) {
+    $nu = $nu -replace "(?smi)(\<releaseNotes\>).*?(\</releaseNotes\>)", "`${1}<![CDATA[$($releaseNotes)]]>`$2"
+  } else {
+    $nu = $nu -replace "(?smi)(\<releaseNotes\>).*?(\</releaseNotes\>)", "`${1}$($releaseNotes)`$2"
+  }
 
   $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($false)
   $NuPath = (Resolve-Path $NuspecFileName)
