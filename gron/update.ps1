@@ -34,6 +34,7 @@ function global:au_BeforeUpdate {
   If ($Latest.Checksum32 -eq '') { $Latest.Checksum32 = $(Get-FileHash ".\tools\$($Latest.Zip32)" -Algorithm SHA256).Hash }
   If ($Latest.Checksum64 -eq '') { $Latest.Checksum64 = $(Get-FileHash ".\tools\$($Latest.Zip32)" -Algorithm SHA256).Hash }
 }
+
 function global:au_AfterUpdate { Set-DescriptionFromReadme -SkipFirst 2 }
 
 function global:au_GetLatest {
@@ -61,4 +62,4 @@ function global:au_GetLatest {
   }
 }
 
-Update-Package -ChecksumFor none
+Update-Package -ChecksumFor none -NoReadme
