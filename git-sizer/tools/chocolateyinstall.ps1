@@ -1,24 +1,15 @@
-$ErrorActionPreference = 'Stop'; # stop on all errors
+﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$packageName= 'git-sizer' # arbitrary name for the package, used in messages
+$packageName= 'git-sizer'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = '{{DownloadUrl}}' # download url, HTTPS preferred
-$url64      = '{{DownloadUrlx64}}' # 64bit URL here (HTTPS preferred) or remove - if installer contains both (very rare), use $url
+$zip32 = 'git-sizer-1.2.0-windows-386.zip'
+$zip64 = 'git-sizer-1.2.0-windows-amd64.zip'
 
 $packageArgs = @{
-  packageName   = $packageName
-  unzipLocation = $toolsDir
-  url           = $url
-  url64bit      = $url64
-
-  # Checksums are now required as of 0.10.0.
-  # To determine checksums, you can get that from the original site if provided.
-  # You can also use checksum.exe (choco install checksum) and use it
-  # e.g. checksum -t sha256 -f path\to\file
-  checksum      = '{{Checksum}}'
-  checksumType  = '{{ChecksumType}}' #default is md5, can also be sha1, sha256 or sha512
-  checksum64    = '{{Checksumx64}}'
-  checksumType64= '{{ChecksumTypex64}}' #default is checksumType
+  packageName    = $packageName
+  FileFullPath   = Join-Path $toolsDir $zip32
+  FileFullPath64 = Join-Path $toolsDir $zip64
+  Destination    = $toolsDir
 }
 
-Install-ChocolateyZipPackage @packageArgs # https://chocolatey.org/docs/helpers-install-chocolatey-zip-package
+Get-ChocolateyUnZip @packageArgs

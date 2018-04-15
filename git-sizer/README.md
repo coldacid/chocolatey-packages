@@ -1,22 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
-  <metadata>
-    <!-- == PACKAGE SPECIFIC SECTION == -->
-    <id>git-sizer</id>
-    <version>1.2.0</version>
-    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
-    <owners>Chris Charabaruk</owners>
-    <!-- ============================== -->
+# git-sizer
 
-    <!-- == SOFTWARE SPECIFIC SECTION == -->
-    <title>git-sizer</title>
-    <authors>GitHub</authors>
-    <projectUrl>https://github.com/github/git-sizer</projectUrl>
-    <copyright>Copyright © 2018 GitHub</copyright>
-    <tags>git vcs dvcs version-control cli</tags>
-    <summary>Compute various size metrics for a Git repository, flagging those that might cause problems</summary>
-    <description><![CDATA[**Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+**Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 
 Is your Git repository bursting at the seams?
 
@@ -192,15 +176,3 @@ $ git-sizer
 ```
 
 This repository is mischievously constructed to have a pathological tree structure, with the same directories repeated over and over again. As a result, even though the entire repository is less than 20 kb in size, when checked out it would explode into over a billion directories containing over ten billion files. (`git-sizer` prints `∞` for the blob count because the true number has overflowed the 32-bit counter used for that field.)
-]]></description>
-    <releaseNotes>https://github.com/github/git-sizer/releases/tag/v1.2.0</releaseNotes>
-    <!-- =============================== -->
-
-    <dependencies>
-      <dependency id="git" version="1.8.5" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
-</package>
