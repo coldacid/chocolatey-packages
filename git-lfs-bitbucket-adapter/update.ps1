@@ -28,6 +28,7 @@ function global:au_BeforeUpdate {
   rm -r .\tmp
   $Latest.ReleaseNotes = $changelog | ForEach-Object { $_ } # convert to string array
 }
+
 function global:au_AfterUpdate {
   Set-DescriptionFromReadme -SkipFirst 2
   Set-ReleaseNotes $Latest.ReleaseNotes -SkipFirst 2
@@ -50,4 +51,4 @@ function global:au_GetLatest {
   }
 }
 
-Update-Package -ChecksumFor none -NoCheckUrl -NoCheckChocoVersion
+Update-Package -ChecksumFor none -NoReadme
