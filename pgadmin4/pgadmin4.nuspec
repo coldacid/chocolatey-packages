@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>pgadmin4</id>
-    <version>{{PackageVersion}}</version>
+    <version>3.0</version>
     <title>pgAdmin 4</title>
     <authors>The PostgreSQL Global Development Group, Current Maintainer: Dave Page</authors>
     <owners>Devon Hubner, Chris Charabaruk</owners>
@@ -10,16 +10,17 @@
     <projectUrl>https://www.pgadmin.org/</projectUrl>
     <iconUrl>https://bytebucket.org/coldacid/chocolatey-packages/raw/master/pgadmin4/pgadmin4-220px.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
+    <description><![CDATA[pgAdmin is the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
 
-pgAdmin is designed to answer the needs of all users, from writing simple SQL queries to developing complex databases. The graphical interface supports all PostgreSQL features and makes administration easy. The application also includes a syntax highlighting SQL editor, a server-side code editor, an SQL/batch/shell job scheduling agent, support for the Slony-I replication engine and much more. Server connection may be made using TCP/IP or Unix Domain Sockets (on *nix platforms), and may be SSL encrypted for security. No additional drivers are required to communicate with the database server.</description>
+pgAdmin is designed to answer the needs of all users, from writing simple SQL queries to developing complex databases. The graphical interface supports all PostgreSQL features and makes administration easy. The application also includes a syntax highlighting SQL editor, a server-side code editor, an SQL/batch/shell job scheduling agent, support for the Slony-I replication engine and much more. Server connection may be made using TCP/IP or Unix Domain Sockets (on *nix platforms), and may be SSL encrypted for security. No additional drivers are required to communicate with the database server.
+]]></description>
     <summary>pgAdmin</summary>
     <releaseNotes />
     <mailingListUrl>https://www.pgadmin.org/support/list.php</mailingListUrl>
     <bugTrackerUrl>https://redmine.postgresql.org/projects/pgadmin4</bugTrackerUrl>
     <projectSourceUrl>https://git.postgresql.org/gitweb/?p=pgadmin4.git</projectSourceUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
-    <copyright>1996-2016 The PostgreSQL Global Development Group</copyright>
+    <copyright>1996-2018 The PostgreSQL Global Development Group</copyright>
     <tags>pgadmin4 pgadmin postgres postgresql admin</tags>
   </metadata>
 </package>
