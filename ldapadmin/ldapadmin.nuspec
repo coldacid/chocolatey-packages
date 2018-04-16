@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>ldapadmin</id>
-    <version>{{PackageVersion}}</version>
+    <version>1.8.3</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
@@ -17,11 +17,11 @@
     <licenseUrl>http://www.gnu.org/copyleft/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>http://sf.net/projects/ldapadmin</projectSourceUrl>
-    <docsUrl>http://http://www.ldapadmin.org/docs/index.html</docsUrl>
+    <docsUrl>http://www.ldapadmin.org/docs/index.html</docsUrl>
     <bugTrackerUrl>http://sourceforge.net/p/ldapadmin/bugs/</bugTrackerUrl>
     <tags>LDAP directory browser samba postfix</tags>
     <summary>LDAP client and administration tool for LDAP directory management</summary>
-    <description>LDAP Admin is a free Windows LDAP client and administration tool for LDAP directory management. This application lets you browse, search, modify, create and delete objects on LDAP server. It also supports more complex operations such as directory copy and move between remote servers and extends the common edit functions to support specific object types (such as groups and accounts).
+    <description><![CDATA[LDAP Admin is a free Windows LDAP client and administration tool for LDAP directory management. This application lets you browse, search, modify, create and delete objects on LDAP server. It also supports more complex operations such as directory copy and move between remote servers and extends the common edit functions to support specific object types (such as groups and accounts).
 
 You can use it to manage Posix groups and accounts, Samba accounts and it even includes support for Postfix MTA. Ldap Admin is free Open Source software distributed under the GNU General Public License.
 
@@ -41,7 +41,7 @@ You can use it to manage Posix groups and accounts, Samba accounts and it even i
 * LDAP SSL support (using Windows API)
 * Template support
 * Offline browsing and editing of LDIF files
-</description>
+]]></description>
     <releaseNotes>http://www.ldapadmin.org/news/</releaseNotes>
     <!-- =============================== -->
   </metadata>
