@@ -1,10 +1,14 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$packageName= 'winvice'
-$version    = '{{PackageVersion}}'
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = '{{DownloadUrl}}'
-$url64      = '{{DownloadUrlx64}}'
+$packageName   = 'winvice'
+$version       = '3.1'
+$toolsDir      = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$url           = 'https://downloads.sourceforge.net/project/vice-emu/releases/binaries/windows/WinVICE-3.1-x86.7z'
+$url64         = 'https://downloads.sourceforge.net/project/vice-emu/releases/binaries/windows/WinVICE-3.1-x64.7z'
+$checksum      = 'ae4fc6677b301bd37eaba86b671775e64837298637af5238a648fb7e8180aaa8'
+$checksum64    = '6cc96f182aa5d1cb9ec2755e2547d301f9746b3b9b38f123dfc692732579d941'
+$checksumType  = 'sha256'
+$checksumType64= 'sha256'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -13,10 +17,10 @@ $packageArgs = @{
   url           = $url
   url64bit      = $url64
 
-  checksum      = '{{Checksum}}'
-  checksumType  = 'sha256'
-  checksum64    = '{{Checksumx64}}'
-  checksumType64= 'sha256'
+  checksum      = $checksum
+  checksumType  = $checksumType
+  checksum64    = $checksum64
+  checksumType64= $checksumType64
 
   options       = @{
     Headers     = @{
