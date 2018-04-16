@@ -1,19 +1,23 @@
-$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+﻿$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 . $toolsPath\helpers.ps1
 
 # stop on all errors
 $ErrorActionPreference = 'Stop';
 
 $packageName   = 'sandcastle' # arbitrary name for the package, used in messages
-$versionNumber = '{{PackageVersion}}'
-$url           = '{{DownloadUrl}}' # download url
-$checksum      = "{{Checksum}}"
+$versionNumber = '2017.12.30.2'
+$url           = 'https://github.com/EWSoftware/SHFB/releases/download/v2017.12.30.2/SHFBInstaller_v2017.12.30.2.zip' # download url
+$checksum      = 'bc8b8a071af474067db486d9820bfcfa62dbc9c02af76692b396eda38575b95b'
+$checksumType  = 'sha256'
 
-$zipFile = Join-Path $toolsPath ('SHFBInstaller_v' + $versionNumber + '.zip')
+$chocTempDir   = Join-Path $env:TEMP "chocolatey"
+$tempDir       = Join-Path $chocTempDir "$packageName"
+
+$zipFile = Join-Path $tempDir ('SHFBInstaller_v' + $versionNumber + '.zip')
 $zipDir = Join-Path $toolsPath ('SHFBInstaller_v' + $versionNumber)
 
 Get-ChocolateyWebFile "$packageName" "$zipFile" "$url" `
-                      -Checksum "$checksum" -ChecksumType 'sha256'
+                      -Checksum "$checksum" -ChecksumType "$checksumType"
 Get-ChocolateyUnzip "$zipFile" "$zipDir"
 
 $packageArgs = @{

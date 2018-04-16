@@ -1,0 +1,5 @@
+# Sandcastle Help File Builder and Tools
+
+Sandcastle is composed of two separate parts that work together: the Sandcastle tools and the Sandcastle Help File Builder. The Sandcastle tools are used to create help files for managed class libraries containing both conceptual and API reference topics. API reference topics are created by combining the XML comments that are embedded in your source code with the syntax and structure of the types which is acquired by reflecting against the associated .NET Framework assemblies. Conceptual topics are created by converting XML documents that you author containing Microsoft Assistance Markup Language (MAML). The Sandcastle tools are command-line based and have no GUI front-end, project management features, or an automated build process.
+
+The Sandcastle Help File Builder was created to fill in the gaps, provide the missing NDoc-like features that are used most often, and provide standalone GUI and command line based tools to build a help file in an automated fashion. A Visual Studio integration package is also available for it so that help projects can be created and managed entirely from within Visual Studio.

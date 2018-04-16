@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>sandcastle</id>
-    <version>{{PackageVersion}}</version>
+    <version>2017.12.30.2</version>
     <title>Sandcastle Help File Builder and Tools (Install)</title>
     <authors>Eric Woodruff</authors>
     <owners>quamotion, Chris Charabaruk</owners>
@@ -10,16 +10,17 @@
     <projectUrl>https://github.com/EWSoftware/SHFB</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/EWSoftware/SHFB/master/NuGet/SHFB.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Sandcastle is composed of two separate parts that work together: the Sandcastle tools and the Sandcastle Help File Builder. The Sandcastle tools are used to create help files for managed class libraries containing both conceptual and API reference topics. API reference topics are created by combining the XML comments that are embedded in your source code with the syntax and structure of the types which is acquired by reflecting against the associated .NET Framework assemblies. Conceptual topics are created by converting XML documents that you author containing Microsoft Assistance Markup Language (MAML). The Sandcastle tools are command-line based and have no GUI front-end, project management features, or an automated build process.
+    <description><![CDATA[Sandcastle is composed of two separate parts that work together: the Sandcastle tools and the Sandcastle Help File Builder. The Sandcastle tools are used to create help files for managed class libraries containing both conceptual and API reference topics. API reference topics are created by combining the XML comments that are embedded in your source code with the syntax and structure of the types which is acquired by reflecting against the associated .NET Framework assemblies. Conceptual topics are created by converting XML documents that you author containing Microsoft Assistance Markup Language (MAML). The Sandcastle tools are command-line based and have no GUI front-end, project management features, or an automated build process.
 
-The Sandcastle Help File Builder was created to fill in the gaps, provide the missing NDoc-like features that are used most often, and provide standalone GUI and command line based tools to build a help file in an automated fashion. A Visual Studio integration package is also available for it so that help projects can be created and managed entirely from within Visual Studio.</description>
+The Sandcastle Help File Builder was created to fill in the gaps, provide the missing NDoc-like features that are used most often, and provide standalone GUI and command line based tools to build a help file in an automated fashion. A Visual Studio integration package is also available for it so that help projects can be created and managed entirely from within Visual Studio.
+]]></description>
     <summary>Sandcastle Help File Builder (SHFB). A standalone GUI, Visual Studio integration package, and MSBuild tasks providing full configuration and extensibility for building help files with the Sandcastle tools.</summary>
-    <releaseNotes>https://github.com/EWSoftware/SHFB/releases/tag/v{{PackageVersion}}</releaseNotes>
+    <releaseNotes>https://github.com/EWSoftware/SHFB/releases/tag/v2017.12.30.2</releaseNotes>
     <docsUrl>http://ewsoftware.github.io/SHFB</docsUrl>
     <bugTrackerUrl>https://github.com/EWSoftware/SHFB/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/EWSoftware/SHFB</projectSourceUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
-    <copyright>Eric Woodruff (c) 2006-2016</copyright>
+    <copyright>Eric Woodruff (c) 2006-2017</copyright>
     <tags>SHFB documentation sandcastle help XML comments file builder admin</tags>
     <dependencies>
       <dependency id="dotnet4.0" version="4.0.30319" />
