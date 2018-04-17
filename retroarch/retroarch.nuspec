@@ -5,29 +5,25 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>retroarch</id>
     <title>RetroArch</title>
-    <version>{{PackageVersion}}</version>
+    <version>1.7.1</version>
     <authors>libretro developers</authors>
     <owners>Chris Charabaruk</owners>
     <summary>RetroArch is the official reference frontend for the libretro API.</summary>
-    <description>
-      RetroArch is a frontend for libretro, an open API which exposes the functionality of a game, emulator or certain
-      kinds of multimedia applications. libretro started as libsnes with the SNES emulator bSNES, but libretro has since
-      become a far broader API. RetroArch builds around the libretro API to provide a powerful interface for libretro
-      cores.
-    </description>
+    <description><![CDATA[RetroArch is a frontend for libretro, an open API which exposes the functionality of a game, emulator or certain kinds of multimedia applications. libretro started as libsnes with the SNES emulator bSNES, but libretro has since become a far broader API. RetroArch builds around the libretro API to provide a powerful interface for libretro cores.
+]]></description>
     <projectUrl>http://www.libretro.com/index.php/retroarch-2/</projectUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <projectSourceUrl>https://github.com/libretro/RetroArch</projectSourceUrl>
     <bugTrackerUrl>https://github.com/libretro/RetroArch/issues</bugTrackerUrl>
     <tags>retroarch games gaming emulation emulators</tags>
     <copyright>GPLv3</copyright>
-    <licenseUrl>https://github.com/libretro/RetroArch/blob/v{{PackageVersion}}/COPYING</licenseUrl>
+    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.7.1/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v{{PackageVersion}}/media/retroarch-96x96.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.1/media/retroarch-96x96.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
-    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v{{PackageVersion}}</releaseNotes>
+    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.1</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
