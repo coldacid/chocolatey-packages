@@ -19,6 +19,11 @@ function global:au_SearchReplace {
       "(?i)(^\s*[$]checksumType\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
       "(?i)(^\s*[$]checksumType64\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType64)'"
     }
+    ".\tools\chocolateyUninstall.ps1" = @{
+      "(?i)(^\s*[$]packageName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)'"
+      "(?i)(^\s*[$]zip32\s*=\s*)('.*')" = "`$1'$($Latest.Zip32)'"
+      "(?i)(^\s*[$]zip64\s*=\s*)('.*')" = "`$1'$($Latest.Zip64)'"
+    }
   }
 }
 
@@ -38,7 +43,9 @@ function global:au_GetLatest {
     Version = $version
 
     URL32 = $url32
+    Zip32 = Split-Path $url32 -Leaf
     URL64 = $url64
+    Zip64 = Split-Path $url64 -Leaf
 
     ReleaseNotes = $releaseNotesUrl
     LicenseUrl = $licenseUrl
