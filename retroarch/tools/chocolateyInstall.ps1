@@ -25,3 +25,10 @@ if ($installDir -eq $toolsPath) {
   Install-BinFile retroarch -path "$installDir\retroarch.exe" -UseStart
   Install-BinFile retroarch_debug -path "$installDir\retroarch_debug.exe" -UseStart
 }
+
+if ($pp.DesktopShortcut) {
+  $desktop = [System.Environment]::GetFolderPath("Desktop")
+  Install-ChocolateyShortcut -ShortcutFilePath "$desktop\RetroArch.lnk" `
+    -TargetPath "$installDir\retroarch.exe" -WorkingDirectory "$installDir" `
+    -WindowStyle 3
+}

@@ -8,6 +8,7 @@ The following package parameters can be set:
 
 * `/InstallDir:{path}` - Installation directory, defaults to Chocolatey tools directory.
 * `/InstallationPath:{path}` - Alias for `/InstallDir`
+* `/DesktopShortcut` - Add shortcut for RetroArch to the desktop.
 
 ## Notes
 
