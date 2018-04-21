@@ -32,7 +32,7 @@ function global:au_BeforeUpdate {
 
   # For some reason Get-RemoteFiles doesn't always set the checksums :(
   If ($Latest.Checksum32 -eq '') { $Latest.Checksum32 = $(Get-FileHash ".\tools\$($Latest.Zip32)" -Algorithm SHA256).Hash }
-  If ($Latest.Checksum64 -eq '') { $Latest.Checksum64 = $(Get-FileHash ".\tools\$($Latest.Zip32)" -Algorithm SHA256).Hash }
+  If ($Latest.Checksum64 -eq '') { $Latest.Checksum64 = $(Get-FileHash ".\tools\$($Latest.Zip64)" -Algorithm SHA256).Hash }
 }
 
 function global:au_AfterUpdate { Set-DescriptionFromReadme -SkipFirst 2 }
