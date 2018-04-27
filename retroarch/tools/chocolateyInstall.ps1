@@ -1,10 +1,10 @@
 ﻿#NOTE: Please remove any commented lines to tidy up prior to releasing the package, including this one
 
 $packageName   = 'retroarch' # arbitrary name for the package, used in messages
-$url           = 'https://buildbot.libretro.com/stable/1.7.1/windows/x86/RetroArch.7z' # download url
-$url64         = 'https://buildbot.libretro.com/stable/1.7.1/windows/x86_64/RetroArch.7z' # 64bit URL here or remove - if installer decides, then use $url
-$checksum      = 'ca48b1a09dc74c5a8074011d07585d48c20965ede5d5aac6e75f2ecd11451931'
-$checksum64    = 'ed199ec8093f0b66bd52c512518e7d7dd80e17fb5384c7f5ebe8795192edd605'
+$url           = 'https://buildbot.libretro.com/stable/1.7.2/windows/x86/RetroArch.7z' # download url
+$url64         = 'https://buildbot.libretro.com/stable/1.7.2/windows/x86_64/RetroArch.7z' # 64bit URL here or remove - if installer decides, then use $url
+$checksum      = '98d68e307242a696cad4179afb971b765e9d1d10c0bde88409612d2da4961b4c'
+$checksum64    = 'e1e31cb0b03e1fa8e094bd06d0178ee7177bf02bf3b8caee70eb5d10c9e6e5f9'
 $checksumType  = 'sha256'
 $checksumType64= 'sha256'
 
