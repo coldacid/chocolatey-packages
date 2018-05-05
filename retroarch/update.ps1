@@ -7,7 +7,7 @@ function global:au_SearchReplace {
   @{
     ".\$($Latest.PackageName).nuspec" = @{
       "\<licenseUrl\>.+" = "<licenseUrl>$($Latest.LicenseUrl)</licenseUrl>"
-      "\<iconUrl\>.+" = "<iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v$($Latest.Version)/media/retroarch-96x96.png</iconUrl>"
+      "\<iconUrl\>.+" = "<iconUrl>$($Latest.IconUrl)</iconUrl>"
       "\<releaseNotes\>.+" = "<releaseNotes>$($Latest.ReleaseNotes)</releaseNotes>"
     }
     ".\tools\chocolateyInstall.ps1" = @{
@@ -38,6 +38,7 @@ function global:au_GetLatest {
 
   $releaseNotesUrl = "https://github.com/libretro/RetroArch/releases/tag/v" + $version
   $licenseUrl = "https://github.com/libretro/RetroArch/blob/v" + $version + '/COPYING'
+  $iconUrl = "https://cdn.rawgit.com/libretro/RetroArch/v${version}/media/retroarch-96x96.png"
 
   return @{
     Version = $version
@@ -49,6 +50,7 @@ function global:au_GetLatest {
 
     ReleaseNotes = $releaseNotesUrl
     LicenseUrl = $licenseUrl
+    IconUrl = $iconUrl
   }
 }
 
