@@ -45,6 +45,9 @@ Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 14 } | ForEac
     $vssku = Split-Path $_.installationPath -Leaf
     $vsixInstaller = Join-Path $_.installationPath 'Common7\IDE\VSIXInstaller.exe'
 
+    # Otherwise VSIXInstaller.exe exits with error code 2003: NoApplicableSKUsException
+    if ( $_.installationVersion.Major -eq 15 ) { $vsver = '15.0' }
+
     Write-Host "    SKU is '$vssku'"
     Write-Host "    Installation path is " $_.installationPath
 
