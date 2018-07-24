@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>gron</id>
     <title>gron</title>
-    <version>0.5.2</version>
+    <version>0.6.0</version>
     <authors>Tom Hudson</authors>
     <owners>Chris Charabaruk</owners>
     <summary>Make JSON greppable!</summary>
@@ -45,7 +45,7 @@ gron can work backwards too, enabling you to turn your filtered data back into J
     <copyright></copyright>
     <licenseUrl>https://github.com/tomnomnom/gron/blog/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>https://github.com/tomnomnom/gron/releases/tag/v0.5.2</releaseNotes>
+    <releaseNotes>https://github.com/tomnomnom/gron/releases/tag/v0.6.0</releaseNotes>
     <docsUrl>https://github.com/tomnomnom/gron/wiki</docsUrl>
     <bugTrackerUrl>https://github.com/tomnomnom/gron/issues</bugTrackerUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
