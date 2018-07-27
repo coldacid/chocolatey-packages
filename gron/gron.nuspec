@@ -43,7 +43,7 @@ gron can work backwards too, enabling you to turn your filtered data back into J
     <projectUrl>https://github.com/tomnomnom/gron</projectUrl>
     <tags>command-line json grep cross-platform foss</tags>
     <copyright></copyright>
-    <licenseUrl>https://github.com/tomnomnom/gron/blog/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/tomnomnom/gron/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>https://github.com/tomnomnom/gron/releases/tag/v0.6.0</releaseNotes>
     <docsUrl>https://github.com/tomnomnom/gron/wiki</docsUrl>
