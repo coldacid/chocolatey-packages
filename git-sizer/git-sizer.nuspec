@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>git-sizer</id>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
@@ -193,7 +193,7 @@ $ git-sizer
 
 This repository is mischievously constructed to have a pathological tree structure, with the same directories repeated over and over again. As a result, even though the entire repository is less than 20 kb in size, when checked out it would explode into over a billion directories containing over ten billion files. (`git-sizer` prints `∞` for the blob count because the true number has overflowed the 32-bit counter used for that field.)
 ]]></description>
-    <releaseNotes>https://github.com/github/git-sizer/releases/tag/v1.2.0</releaseNotes>
+    <releaseNotes>https://github.com/github/git-sizer/releases/tag/v1.3.0</releaseNotes>
     <!-- =============================== -->
 
     <dependencies>
