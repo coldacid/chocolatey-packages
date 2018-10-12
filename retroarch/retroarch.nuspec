@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>retroarch</id>
     <title>RetroArch</title>
-    <version>1.7.4</version>
+    <version>1.7.5</version>
     <authors>libretro developers</authors>
     <owners>Chris Charabaruk</owners>
     <summary>RetroArch is the official reference frontend for the libretro API.</summary>
@@ -17,13 +17,13 @@
     <bugTrackerUrl>https://github.com/libretro/RetroArch/issues</bugTrackerUrl>
     <tags>retroarch games gaming emulation emulators</tags>
     <copyright>GPLv3</copyright>
-    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.7.4/COPYING</licenseUrl>
+    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.7.5/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.4/media/retroarch-96x96.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.5/media/retroarch-96x96.png</iconUrl>
     <!--<dependencies>
       <dependency id="" version="" />
     </dependencies>-->
-    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.4</releaseNotes>
+    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.5</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
