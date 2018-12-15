@@ -12,4 +12,4 @@ The following package parameters can be set:
 
 ## Notes
 
-If a custom installation directory is used for RetroArch, shims will still be created for retroarch.exe and retroarch_debug.exe on the path so that RetroArch can be started from the command line as with prior versions of this package.
+If a custom installation directory is used for RetroArch, shims will still be created for `retroarch.exe` and `retroarch_debug.exe` on the path so that RetroArch can be started from the command line as with prior versions of this package.
