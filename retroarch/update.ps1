@@ -7,7 +7,7 @@ function global:au_SearchReplace {
   @{
     ".\$($Latest.PackageName).nuspec" = @{
       "\<licenseUrl\>.+" = "<licenseUrl>$($Latest.LicenseUrl)</licenseUrl>"
-      "\<iconUrl\>.+" = "<iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v$($Latest.Version)/media/retroarch-96x96.png</iconUrl>"
+      "\<iconUrl\>.+" = "<iconUrl>$($Latest.IconUrl)</iconUrl>"
       "\<releaseNotes\>.+" = "<releaseNotes>$($Latest.ReleaseNotes)</releaseNotes>"
     }
     ".\tools\chocolateyInstall.ps1" = @{
@@ -18,6 +18,11 @@ function global:au_SearchReplace {
       "(?i)(^\s*[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
       "(?i)(^\s*[$]checksumType\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
       "(?i)(^\s*[$]checksumType64\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType64)'"
+    }
+    ".\tools\chocolateyUninstall.ps1" = @{
+      "(?i)(^\s*[$]packageName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)'"
+      "(?i)(^\s*[$]zip32\s*=\s*)('.*')" = "`$1'$($Latest.Zip32)'"
+      "(?i)(^\s*[$]zip64\s*=\s*)('.*')" = "`$1'$($Latest.Zip64)'"
     }
   }
 }
@@ -33,15 +38,19 @@ function global:au_GetLatest {
 
   $releaseNotesUrl = "https://github.com/libretro/RetroArch/releases/tag/v" + $version
   $licenseUrl = "https://github.com/libretro/RetroArch/blob/v" + $version + '/COPYING'
+  $iconUrl = "https://cdn.rawgit.com/libretro/RetroArch/v${version}/media/retroarch-96x96.png"
 
   return @{
     Version = $version
 
     URL32 = $url32
+    Zip32 = Split-Path $url32 -Leaf
     URL64 = $url64
+    Zip64 = Split-Path $url64 -Leaf
 
     ReleaseNotes = $releaseNotesUrl
     LicenseUrl = $licenseUrl
+    IconUrl = $iconUrl
   }
 }
 

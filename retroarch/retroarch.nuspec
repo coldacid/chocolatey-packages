@@ -20,9 +20,9 @@
     <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.7.5/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.5/media/retroarch-96x96.png</iconUrl>
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
+    <dependencies>
+      <dependency id="chocolatey" version="0.10.12" />
+    </dependencies>
     <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.5</releaseNotes>
   </metadata>
   <files>
