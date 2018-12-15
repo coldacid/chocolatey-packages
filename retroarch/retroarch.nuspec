@@ -21,8 +21,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.5/media/retroarch-96x96.png</iconUrl>
     <dependencies>
-      <dependency id="chocolatey" version="0.9.9" />
-      <dependency id="chocolatey-core.extension" version="1.3.3" />
+      <dependency id="chocolatey" version="0.9.12" />
     </dependencies>
     <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.5</releaseNotes>
   </metadata>
