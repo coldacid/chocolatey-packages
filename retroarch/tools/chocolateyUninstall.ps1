@@ -5,12 +5,11 @@ $zip64         = 'RetroArch.7z'
 if (Get-ProcessorBits -eq 64) { $zip = $zip64 } else { $zip = $zip32 }
 Uninstall-ChocolateyZipPackage "$packageName" "$zip"
 
-$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-
 # Get package parameters
 $pp = Get-PackageParameters
 if ($null -eq $pp -or $pp.Count -eq 0) {
   # Work around for choco#1479 https://github.com/chocolatey/choco/issues/1479
+  $toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   $paramsFile = Join-Path (Split-Path -Parent $toolsPath) 'PackageParameters.xml'
   if (Test-Path -Path $paramsFile) {
     Write-Debug "Loading package parameters from $paramsFile"
@@ -21,7 +20,7 @@ if ($null -eq $pp -or $pp.Count -eq 0) {
   }
 }
 
-$installDir = $toolsPath
+$installDir = Join-Path $(Get-ToolsLocation) $packageName
 if ($pp.InstallDir -or $pp.InstallationPath ) { $installDir = $pp.InstallDir + $pp.InstallationPath }
 
 if ($installDir -ne $toolsPath) {

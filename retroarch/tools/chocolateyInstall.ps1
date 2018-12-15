@@ -6,16 +6,16 @@ $checksum64    = 'aa71a32e6b6d05abfa095a931725c99d8301138206d2dd09fcf5bb1ca9fb5a
 $checksumType  = 'sha256'
 $checksumType64= 'sha256'
 
-$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 # Get the package parameters and then back them up for the uninstaller
 # This works around choco#1479 https://github.com/chocolatey/choco/issues/1479
 $pp = Get-PackageParameters
+$toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $paramsFile = Join-Path (Split-Path -Parent $toolsPath) 'PackageParameters.xml'
 Write-Debug "Writing package parameters to $paramsFile"
 Export-Clixml -Path $paramsFile -InputObject $pp
 
-$installDir = $toolsPath
+$installDir = Join-Path $(Get-ToolsLocation) $packageName
 if ($pp.InstallDir -or $pp.InstallationPath ) { $installDir = $pp.InstallDir + $pp.InstallationPath }
 Write-Host "RetroArch is going to be installed in '$installDir'"
 

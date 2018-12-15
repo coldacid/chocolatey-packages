@@ -6,7 +6,7 @@ RetroArch is a frontend for libretro, an open API which exposes the functionalit
 
 The following package parameters can be set:
 
-* `/InstallDir:{path}` - Installation directory, defaults to Chocolatey tools directory.
+* `/InstallDir:{path}` - Installation directory, defaults to `{tools-location}\retroarch` (typically `C:\tools\retroarch`)
 * `/InstallationPath:{path}` - Alias for `/InstallDir`
 * `/DesktopShortcut` - Add shortcut for RetroArch to the desktop.
 
