@@ -17,13 +17,13 @@
     <bugTrackerUrl>https://github.com/libretro/RetroArch/issues</bugTrackerUrl>
     <tags>retroarch games gaming emulation emulators</tags>
     <copyright>GPLv3</copyright>
-    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.7.5/COPYING</licenseUrl>
+    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.7.6/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.5/media/retroarch-96x96.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.7.6/media/retroarch-96x96.png</iconUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
     </dependencies>
-    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.5</releaseNotes>
+    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.7.6</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
