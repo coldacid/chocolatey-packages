@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>winevdm</id>
+    <version>0.7.0</version>
+    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
+    <owners>Chris Charabaruk</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>winevdm</title>
+    <authors>GitHub</authors>
+    <projectUrl>https://github.com/otya128/winevdm</projectUrl>
+    <copyright>https://github.com/otya128/winevdm/blob/master/LICENSE</copyright>
+    <tags>wine vdm win16 retrocomputing admin</tags>
+    <summary>An altered version of winevdm (a 16-bit Windows emulator), ported to 64-bit Windows.</summary>
+    <description><![CDATA[> 16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows
+
+An altered version of winevdm (a 16-bit Windows emulator), ported to 64-bit
+Windows.
+
+This package installs winevdm for Windows and registers it so that 16-bit
+Windows applications can be directly launched in 64-bit editions of Windows.
+Alternatively you can call `otvdm.exe` with the path of the 16-bit Windows app
+you wish to run, or `otvdmw.exe` to pick a 16-bit executable to run via the
+Open File dialog.
+
+This package also includes the Wine port of the WinHelp app for any applications
+which use old-style WinHelp `.hlp` files for documentation.
+]]></description>
+    <releaseNotes>https://github.com/otya128/winevdm/releases/tag/v0.7.0</releaseNotes>
+    <!-- =============================== -->
+
+    <dependencies>
+      <dependency id="vcredist2017" version="14.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
