@@ -8,6 +8,7 @@ function global:au_SearchReplace {
   @{
     ".\winevdm.nuspec" = @{
       "\<releaseNotes\>.+" = "<releaseNotes>$($Latest.ReleaseNotes)</releaseNotes>"
+      "\<licenseUrl\>.+"   = "<licenseUrl>$($Latest.LicenseUrl)</licenseUrl>"
     }
     ".\legal\VERIFICATION.txt" = @{
       "(?i)https://github.com/otya128/winevdm/releases/download/.*"  = "$($Latest.URL)"
@@ -17,6 +18,7 @@ function global:au_SearchReplace {
     }
     ".\tools\chocolateyInstall.ps1" = @{
       "(?i)(^\s*[$]packageName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)'"
+      "(?i)(^\s*[$]zip\s*=\s*)('.*')"         = "`$1'$($Latest.Zip)'"
     }
   }
 }
@@ -30,7 +32,7 @@ function global:au_BeforeUpdate {
   }
 
   # For some reason Get-RemoteFiles doesn't always set the checksums :(
-  If ($Latest.Checksum -eq '') { $Latest.Checksum = $(Get-FileHash ".\tools\$($Latest.Zip)" -Algorithm SHA256).Hash }
+  If ([System.String]::IsNullOrEmpty($Latest.Checksum)) { $Latest.Checksum = $(Get-FileHash ".\tools\$($Latest.Zip)" -Algorithm SHA256).Hash }
 }
 
 function global:au_AfterUpdate { Set-DescriptionFromReadme -SkipFirst 2 -UseCData }

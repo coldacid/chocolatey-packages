@@ -6,6 +6,7 @@ if (!(Test-ProcessAdminRights)) {
 
 $packageName= 'winevdm'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$zip        = 'otvdm-v0.7.0.zip'
 
 $packageArgs = @{
   packageName    = $packageName

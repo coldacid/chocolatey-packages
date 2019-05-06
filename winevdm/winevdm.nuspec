@@ -10,9 +10,10 @@
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
-    <title>winevdm</title>
-    <authors>GitHub</authors>
+    <title>winevdm for 64-bit Windows</title>
+    <authors>otya128, Wine project authors</authors>
     <projectUrl>https://github.com/otya128/winevdm</projectUrl>
+    <bugTrackerUrl>https://github.com/otya128/winevdm/issues</bugTrackerUrl>
     <copyright>https://github.com/otya128/winevdm/blob/master/LICENSE</copyright>
     <tags>wine vdm win16 retrocomputing admin</tags>
     <summary>An altered version of winevdm (a 16-bit Windows emulator), ported to 64-bit Windows.</summary>
@@ -31,6 +32,7 @@ This package also includes the Wine port of the WinHelp app for any applications
 which use old-style WinHelp `.hlp` files for documentation.
 ]]></description>
     <releaseNotes>https://github.com/otya128/winevdm/releases/tag/v0.7.0</releaseNotes>
+    <licenseUrl>https://raw.githubusercontent.com/otya128/winevdm/v0.7.0/LICENSE</licenseUrl>
     <!-- =============================== -->
 
     <dependencies>
