@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>retroarch</id>
     <title>RetroArch</title>
-    <version>1.7.7</version>
+    <version>1.7.7.20190510</version>
     <authors>libretro developers</authors>
     <owners>Chris Charabaruk</owners>
     <summary>RetroArch is the official reference frontend for the libretro API.</summary>
