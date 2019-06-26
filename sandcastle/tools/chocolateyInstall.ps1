@@ -5,9 +5,9 @@
 $ErrorActionPreference = 'Stop';
 
 $packageName   = 'sandcastle' # arbitrary name for the package, used in messages
-$versionNumber = '2019.4.14.0'
-$url           = 'https://github.com/EWSoftware/SHFB/releases/download/v2019.4.14.0/SHFBInstaller_v2019.4.14.0.zip' # download url
-$checksum      = '8f7e194362235409b5214979137fc6bb26af8df69636590fc68e3b9e712a86b6'
+$versionNumber = '2019.6.24.0'
+$url           = 'https://github.com/EWSoftware/SHFB/releases/download/2019.6.24.0/SHFBInstaller_v2019.6.24.0.zip' # download url
+$checksum      = 'e96ac344fb7007abd9401b1c7929e5325897d587c1995f519149f7df4c32bc07'
 $checksumType  = 'sha256'
 
 $chocTempDir   = Join-Path $env:TEMP "chocolatey"
