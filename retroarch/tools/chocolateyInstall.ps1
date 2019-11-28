@@ -1,8 +1,8 @@
 ﻿$packageName   = 'retroarch'
-$url           = 'https://buildbot.libretro.com/stable/1.8.0/windows/x86/RetroArch.7z'
-$url64         = 'https://buildbot.libretro.com/stable/1.8.0/windows/x86_64/RetroArch.7z'
-$checksum      = '1fbe57ba8cb24302a7853dd6cbc610375a443fd0395f13f4c8a406b6f8f913b0'
-$checksum64    = '53f470a48a14b644f163997904eeeedeb5499d32989d3cc0a83c15b86dec4d25'
+$url           = 'https://buildbot.libretro.com/stable/1.8.1/windows/x86/RetroArch.7z'
+$url64         = 'https://buildbot.libretro.com/stable/1.8.1/windows/x86_64/RetroArch.7z'
+$checksum      = '1c24bc3b7039528347b50d09cc2ffa418e41df94bb31fa080978a02cd835a825'
+$checksum64    = '96a6bf3d1da33a740680a3b616a8fe89632a1535356ffc89b564d9c2c2aadecd'
 $checksumType  = 'sha256'
 $checksumType64= 'sha256'
 
