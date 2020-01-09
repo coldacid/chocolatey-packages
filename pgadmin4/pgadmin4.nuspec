@@ -6,7 +6,7 @@
     <title>pgAdmin 4</title>
     <authors>The PostgreSQL Global Development Group, Current Maintainer: Dave Page</authors>
     <owners>Devon Hubner, Chris Charabaruk</owners>
-    <licenseUrl>http://www.pgadmin.org/licence.php</licenseUrl>
+    <licenseUrl>http://www.pgadmin.org/licence/</licenseUrl>
     <projectUrl>https://www.pgadmin.org/</projectUrl>
     <iconUrl>https://bytebucket.org/coldacid/chocolatey-packages/raw/master/pgadmin4/pgadmin4-220px.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,7 +16,7 @@ pgAdmin is designed to answer the needs of all users, from writing simple SQL qu
 ]]></description>
     <summary>pgAdmin</summary>
     <releaseNotes />
-    <mailingListUrl>https://www.pgadmin.org/support/list.php</mailingListUrl>
+    <mailingListUrl>https://www.pgadmin.org/support/list/</mailingListUrl>
     <bugTrackerUrl>https://redmine.postgresql.org/projects/pgadmin4</bugTrackerUrl>
     <projectSourceUrl>https://git.postgresql.org/gitweb/?p=pgadmin4.git</projectSourceUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
