@@ -8,8 +8,11 @@ function global:au_SearchReplace {
     ".\tools\chocolateyinstall.ps1" = @{
       "(?i)(^\s*[$]packageName\s*=\s*)('.*')" = "`$1'$($Latest.PackageName)'"
       "(?i)(^\s*[$]url\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
+      "(?i)(^\s*[$]url64\s*=\s*)('.*')" = "`$1'$($Latest.URL64)'"
       "(?i)(^\s*[$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+      "(?i)(^\s*[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
       "(?i)(^\s*[$]checksumType\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
+      "(?i)(^\s*[$]checksumType64\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType64)'"
     }
   }
 }
@@ -23,11 +26,13 @@ function global:au_GetLatest {
   Write-Host $url $version
 
   $url32 = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${version}/windows/pgadmin4-${version}-x86.exe"
+  $url64 = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${version}/windows/pgadmin4-${version}-x64.exe"
 
   return @{
     Version = $version
 
     URL32 = $url32
+    URL64 = $url64
   }
 }
 
