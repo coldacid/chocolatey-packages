@@ -39,6 +39,8 @@ Get-AUPackages | ForEach-Object {
 
   if ($newVersion -gt $oldVersion) {
     cpush ${packageName}$($packageData.NuspecVersion).nupkg
+    git add .
+    git commit -m "${packageName}: Update to $($packageData.NuspecVersion)"
   }
 
   Pop-Location
