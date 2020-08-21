@@ -2,6 +2,8 @@ Import-Module au
 
 Get-AUPackages | ForEach-Object {
   $packageName = $_.Name
+  $packageData = $null
+  $packageErr = $null
 
   # Deal with sticky global functions by deleting them before each package run
   Remove-Item Function:\au_GetLatest -ErrorAction SilentlyContinue
@@ -13,10 +15,31 @@ Get-AUPackages | ForEach-Object {
   Push-Location $_
   Write-Host $packageName
   try {
-    . $PSScriptRoot\$packageName\update.ps1
+    $packageData = . $PSScriptRoot\$packageName\update.ps1
+    if ($packageData -eq $null) {
+      throw $(New-Object System.Exception -Arguments "No package data returned")
+    }
   }
   catch {
-    Write-Error $error[0]
+    $packageErr = $error[0]
   }
+  if ($packageErr -eq $null -and $packageData.Error -ne $null) {
+    $packageErr = $packageData.Error
+  }
+
+  if ($packageErr -ne $null) {
+    Write-Error $packageErr
+    Pop-Location
+    continue
+  }
+
+  # Check if package has been updated, and push the new version if so
+  $oldVersion = [version]$packageData.RemoteVersion
+  $newVersion = [version]$packageData.NuspecVersion
+
+  if ($newVersion -gt $oldVersion) {
+    cpush ${packageName}$($packageData.NuspecVersion).nupkg
+  }
+
   Pop-Location
 }
