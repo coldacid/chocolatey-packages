@@ -38,9 +38,17 @@ Get-AUPackages | ForEach-Object {
   $newVersion = [version]$packageData.NuspecVersion
 
   if ($newVersion -gt $oldVersion) {
-    cpush ${packageName}$($packageData.NuspecVersion).nupkg
+    $verString = $packageData.NuspecVersion
+    try {
+      cpush ${packageName}${verString}.nupkg
+    }
+    catch {
+      $err = $error[0]
+      Write-Error "Failed to push ${packageName} ${verString}: $err"
+    }
+
     git add .
-    git commit -m "${packageName}: Update to $($packageData.NuspecVersion)"
+    git commit -m "${packageName}: Update to ${verString}"
   }
 
   Pop-Location
