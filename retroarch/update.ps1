@@ -55,3 +55,8 @@ function global:au_GetLatest {
 }
 
 Update-Package
+
+# Clean up PackageParameters.xml since it's neither needed nor wanted in here
+If (Test-Path -Path "PackageParameters.xml" -PathType leaf) {
+  Remove-Item PackageParameters.xml
+}
