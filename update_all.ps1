@@ -37,7 +37,7 @@ Get-AUPackages | ForEach-Object {
   $oldVersion = [version]$packageData.RemoteVersion
   $newVersion = [version]$packageData.NuspecVersion
 
-  if ($newVersion -gt $oldVersion) {
+  if ($newVersion -ne $oldVersion) {
     $verString = $packageData.NuspecVersion
     try {
       cpush ${packageName}${verString}.nupkg
