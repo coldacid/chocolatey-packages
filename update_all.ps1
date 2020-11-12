@@ -38,9 +38,10 @@ Get-AUPackages | ForEach-Object {
   $newVersion = [version]$packageData.NuspecVersion
 
   if ($newVersion -ne $oldVersion) {
-    $verString = $packageData.NuspecVersion
+    # For some reason, the new package version ends up in RemoteVersion?
+    $verString = $packageData.RemoteVersion
     try {
-      cpush ${packageName}${verString}.nupkg
+      cpush ${packageName}.${verString}.nupkg
     }
     catch {
       $err = $error[0]
