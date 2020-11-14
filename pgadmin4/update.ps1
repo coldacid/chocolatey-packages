@@ -28,11 +28,15 @@ function global:au_GetLatest {
   $url32 = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${version}/windows/pgadmin4-${version}-x86.exe"
   $url64 = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${version}/windows/pgadmin4-${version}-x64.exe"
 
+  $releaseNotesUrl = "https://www.pgadmin.org/docs/pgadmin4/${version}/release_notes_${version}.html"
+
   return @{
     Version = $version
 
     URL32 = $url32
     URL64 = $url64
+
+    ReleaseNotes = $releaseNotesUrl
   }
 }
 
