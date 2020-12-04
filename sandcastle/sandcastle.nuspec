@@ -20,10 +20,10 @@ The Sandcastle Help File Builder was created to fill in the gaps, provide the mi
     <bugTrackerUrl>https://github.com/EWSoftware/SHFB/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/EWSoftware/SHFB</projectSourceUrl>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
-    <copyright>Eric Woodruff (c) 2006-2017</copyright>
+    <copyright>Eric Woodruff (c) 2006-2020</copyright>
     <tags>SHFB documentation sandcastle help XML comments file builder admin</tags>
     <dependencies>
-      <dependency id="dotnet4.0" version="4.0.30319" />
+      <dependency id="dotnet4.7.2" version="4.7.2.0" />
       <dependency id="vswhere" version="1.0.58" />
     </dependencies>
   </metadata>
