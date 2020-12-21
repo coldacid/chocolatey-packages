@@ -27,4 +27,8 @@ The Sandcastle Help File Builder was created to fill in the gaps, provide the mi
       <dependency id="vswhere" version="1.0.58" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="tools/**" target="tools" />
+    <file exclude="update.ps1" />
+  </files>
 </package>

@@ -63,5 +63,6 @@
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file exclude="update.ps1" />
   </files>
 </package>

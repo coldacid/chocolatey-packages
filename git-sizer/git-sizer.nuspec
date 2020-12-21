@@ -58,5 +58,6 @@ Is your Git repository bursting at the seams?
   <files>
     <file src="tools\**" target="tools" />
     <file src="legal\**" target="legal" />
+    <file exclude="update.ps1" />
   </files>
 </package>

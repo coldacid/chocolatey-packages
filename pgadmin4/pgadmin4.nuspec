@@ -23,4 +23,8 @@ pgAdmin is designed to answer the needs of all users, from writing simple SQL qu
     <copyright>1996-2018 The PostgreSQL Global Development Group</copyright>
     <tags>pgadmin4 pgadmin postgres postgresql admin</tags>
   </metadata>
+  <files>
+    <file src="tools/**" target="tools" />
+    <file exclude="update.ps1" />
+  </files>
 </package>
