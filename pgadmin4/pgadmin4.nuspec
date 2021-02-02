@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>pgadmin4</id>
-    <version>4.29</version>
+    <version>4.30</version>
     <title>pgAdmin 4</title>
     <authors>The PostgreSQL Global Development Group, Current Maintainer: Dave Page</authors>
     <owners>Devon Hubner, Chris Charabaruk</owners>
@@ -24,7 +24,6 @@ pgAdmin is designed to answer the needs of all users, from writing simple SQL qu
     <tags>pgadmin4 pgadmin postgres postgresql admin</tags>
   </metadata>
   <files>
-    <file src="tools/**" target="tools" />
-    <file exclude="update.ps1" />
+    <file src="tools/**" target="" />
   </files>
 </package>
