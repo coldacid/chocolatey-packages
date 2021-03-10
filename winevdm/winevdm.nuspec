@@ -42,6 +42,5 @@ which use old-style WinHelp `.hlp` files for documentation.
   <files>
     <file src="tools\**" target="tools" />
     <file src="legal\**" target="legal" />
-    <file exclude="update.ps1" />
   </files>
 </package>

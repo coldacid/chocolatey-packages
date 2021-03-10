@@ -47,6 +47,5 @@ You can use it to manage Posix groups and accounts, Samba accounts and it even i
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
-    <file exclude="update.ps1" />
   </files>
 </package>
