@@ -13,7 +13,7 @@ Get-AUPackages | ForEach-Object {
 
   # Move into the package directory and then run the update script for it
   Push-Location $_
-  Write-Host $packageName
+  Write-Host "Updating $packageName"
   try {
     $packageData = . $PSScriptRoot\$packageName\update.ps1
     if ($packageData -eq $null) {
@@ -28,7 +28,7 @@ Get-AUPackages | ForEach-Object {
   }
 
   if ($packageErr -ne $null) {
-    Write-Error $packageErr
+    Write-Error "Failed to update ${packageName}: $packageErr"
     Pop-Location
     continue
   }
@@ -40,14 +40,17 @@ Get-AUPackages | ForEach-Object {
   if ($newVersion -ne $oldVersion) {
     # For some reason, the new package version ends up in RemoteVersion?
     $verString = $packageData.RemoteVersion
+    Write-Host "Pushing ${packageName} ${verString} to Chocolatey"
     try {
-      cpush ${packageName}.${verString}.nupkg
+      choco push ${packageName}.${verString}.nupkg
+      if ($LastExitCode -ne 0) { throw "Choco push failed with exit code $LastExitCode" }
     }
     catch {
       $err = $error[0]
       Write-Error "Failed to push ${packageName} ${verString}: $err"
     }
 
+    Write-Host "Committing ${packageName} changes to Git"
     git add .
     git commit -m "${packageName}: Update to ${verString}"
   }
