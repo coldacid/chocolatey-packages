@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>sandcastle</id>
-    <version>2021.4.5.0</version>
+    <version>2021.4.9.0</version>
     <title>Sandcastle Help File Builder and Tools (Install)</title>
     <authors>Eric Woodruff</authors>
     <owners>quamotion, Chris Charabaruk</owners>
@@ -15,7 +15,7 @@
 The Sandcastle Help File Builder was created to fill in the gaps, provide the missing NDoc-like features that are used most often, and provide standalone GUI and command line based tools to build a help file in an automated fashion. A Visual Studio integration package is also available for it so that help projects can be created and managed entirely from within Visual Studio.
 ]]></description>
     <summary>Sandcastle Help File Builder (SHFB). A standalone GUI, Visual Studio integration package, and MSBuild tasks providing full configuration and extensibility for building help files with the Sandcastle tools.</summary>
-    <releaseNotes>https://github.com/EWSoftware/SHFB/releases/tag/v2021.4.5.0</releaseNotes>
+    <releaseNotes>https://github.com/EWSoftware/SHFB/releases/tag/v2021.4.9.0</releaseNotes>
     <docsUrl>http://ewsoftware.github.io/SHFB</docsUrl>
     <bugTrackerUrl>https://github.com/EWSoftware/SHFB/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/EWSoftware/SHFB</projectSourceUrl>
