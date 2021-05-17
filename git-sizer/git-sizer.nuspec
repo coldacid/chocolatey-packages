@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>git-sizer</id>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
@@ -48,7 +48,7 @@ Is your Git repository bursting at the seams?
 
 `git-sizer` computes many size-related statistics about your repository that can help reveal all of the problems described above. These practices are not wrong per se, but the more that you stretch Git beyond its sweet spot, the less you will be able to enjoy Git's legendary speed and performance. Especially if your Git repository statistics seem out of proportion to your project size, you might be able to make your life easier by adjusting how you use Git.
 ]]></description>
-    <releaseNotes>https://github.com/github/git-sizer/releases/tag/v1.3.0</releaseNotes>
+    <releaseNotes>https://github.com/github/git-sizer/releases/tag/v1.4.0</releaseNotes>
     <!-- =============================== -->
 
     <dependencies>
