@@ -2,7 +2,14 @@
 $zip32         = 'RetroArch.7z'
 $zip64         = 'RetroArch.7z'
 
-if (Get-ProcessorBits -eq 64) { $zip = $zip64 } else { $zip = $zip32 }
+if ((Get-ProcessorBits 32) -or $env:ChocolateyForceX86 -eq 'true') {
+  $specificFolder = "RetroArch-Win32"
+  $zip = $zip32
+} else {
+  $specificFolder = "RetroArch-Win64"
+  $zip = $zip64
+}
+
 Uninstall-ChocolateyZipPackage "$packageName" "$zip"
 
 # Get package parameters
@@ -20,12 +27,14 @@ if ($null -eq $pp -or $pp.Count -eq 0) {
   }
 }
 
-$installDir = Join-Path $(Get-ToolsLocation) $packageName
+$installDir = Join-Path $(Get-ToolsLocation) $specificFolder
 if ($pp.InstallDir -or $pp.InstallationPath ) { $installDir = $pp.InstallDir + $pp.InstallationPath }
 
 if ($installDir -ne $toolsPath) {
   Uninstall-BinFile retroarch -path "$installDir\retroarch.exe"
-  Uninstall-BinFile retroarch_debug -path "$installDir\retroarch_debug.exe"
+  if (Test-Path "$installDir\retroarch_debug.exe") {
+    Uninstall-BinFile retroarch_debug -path "$installDir\retroarch_debug.exe"
+  }
 }
 
 if ($pp.DesktopShortcut) {
