@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>biblioteq</id>
-    <version>2021.05.15</version>
+    <version>2021.06.12</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
@@ -14,7 +14,7 @@
     <authors>textbrowser</authors>
     <projectUrl>https://textbrowser.github.io/biblioteq/</projectUrl>
     <iconUrl>https://bytebucket.org/coldacid/chocolatey-packages/raw/master/biblioteq/biblioteq-220.png</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/textbrowser/biblioteq/2021.05.15/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/textbrowser/biblioteq/2021.06.12/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/textbrowser/biblioteq</projectSourceUrl>
     <docsUrl>https://github.com/textbrowser/biblioteq/wiki</docsUrl>
