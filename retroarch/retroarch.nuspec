@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>retroarch</id>
     <title>RetroArch</title>
-    <version>1.9.4.20210611</version>
+    <version>1.9.5</version>
     <authors>libretro developers</authors>
     <owners>Chris Charabaruk</owners>
     <summary>RetroArch is the official reference frontend for the libretro API.</summary>
@@ -33,13 +33,13 @@ Since v1.7.7 was released, the libretro/RetroArch developers have been uploading
     <bugTrackerUrl>https://github.com/libretro/RetroArch/issues</bugTrackerUrl>
     <tags>retroarch games gaming emulation emulators</tags>
     <copyright>GPLv3</copyright>
-    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.9.4/COPYING</licenseUrl>
+    <licenseUrl>https://github.com/libretro/RetroArch/blob/v1.9.5/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.9.4/media/retroarch-96x96.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/libretro/RetroArch/v1.9.5/media/retroarch-96x96.png</iconUrl>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
     </dependencies>
-    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.9.4</releaseNotes>
+    <releaseNotes>https://github.com/libretro/RetroArch/releases/tag/v1.9.5</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
