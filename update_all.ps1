@@ -5,6 +5,8 @@ Get-AUPackages | ForEach-Object {
   $packageData = $null
   $packageErr = $null
 
+  Write-Host `n
+
   # Deal with sticky global functions by deleting them before each package run
   Remove-Item Function:\au_GetLatest -ErrorAction SilentlyContinue
   Remove-Item Function:\au_SearchReplace -ErrorAction SilentlyContinue
@@ -34,12 +36,9 @@ Get-AUPackages | ForEach-Object {
   }
 
   # Check if package has been updated, and push the new version if so
-  $oldVersion = [version]$packageData.RemoteVersion
-  $newVersion = [version]$packageData.NuspecVersion
-
-  if ($newVersion -gt $oldVersion) {
+  if ($packageData.Updated -eq $true) {
     # For some reason, the new package version ends up in RemoteVersion?
-    $verString = $packageData.RemoteVersion
+    $verString = $packageData.NuspecVersion
     Write-Host "Pushing ${packageName} ${verString} to Chocolatey"
     try {
       $packageFile = [System.String]::Join('.', $packageName, $verString, 'nupkg')
