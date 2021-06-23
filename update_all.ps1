@@ -37,12 +37,13 @@ Get-AUPackages | ForEach-Object {
   $oldVersion = [version]$packageData.RemoteVersion
   $newVersion = [version]$packageData.NuspecVersion
 
-  if ($newVersion -ne $oldVersion) {
+  if ($newVersion -gt $oldVersion) {
     # For some reason, the new package version ends up in RemoteVersion?
     $verString = $packageData.RemoteVersion
     Write-Host "Pushing ${packageName} ${verString} to Chocolatey"
     try {
-      choco push ${packageName}.${verString}.nupkg
+      $packageFile = [System.String]::Join('.', $packageName, $verString, 'nupkg')
+      choco push $packageFile
       if ($LastExitCode -ne 0) { throw "Choco push failed with exit code $LastExitCode" }
     }
     catch {
