@@ -2,8 +2,8 @@
 
 $packageName   = 'pgadmin4'
 $toolsDir      = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64         = 'https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v5.5/windows/pgadmin4-5.5-x64.exe'
-$checksum64    = '185a5bf2896bacfa764a088fa8abda8422384776519379062b4e2777ffaf4b5d'
+$url64         = 'https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v5.6/windows/pgadmin4-5.6-x64.exe'
+$checksum64    = 'b4c383b518396699cd668d21b2464f03176e76ddcd14d2b6d0ade9950f25bc11'
 $checksumType64= 'sha256'
 
 $packageArgs = @{
