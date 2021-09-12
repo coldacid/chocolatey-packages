@@ -1,6 +1,6 @@
 ﻿$packageName   = 'biblioteq' # arbitrary name for the package, used in messages
-$url           = 'https://github.com/textbrowser/biblioteq/releases/download/2021.08.08/BiblioteQ.zip' # download url
-$checksum      = 'b6271ec66f96322dc7a4ff55e8e15c22f5f666ea2354b8cb46652edf456f4721'
+$url           = 'https://github.com/textbrowser/biblioteq/releases/download/2021.09.10/BiblioteQ.zip' # download url
+$checksum      = 'ec325f151341050b0fa41caa94c3554ce5c01e666042c9b8e2d80cdaebce95af'
 $checksumType  = 'sha256'
 
 $installDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
