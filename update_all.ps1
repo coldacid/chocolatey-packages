@@ -37,8 +37,15 @@ Get-AUPackages | ForEach-Object {
 
   # Check if package has been updated, and push the new version if so
   if ($packageData.Updated -eq $true) {
-    # For some reason, the new package version ends up in RemoteVersion?
-    $verString = $packageData.NuspecVersion
+    # Deal with the version properties being wishy-washy about which is newer
+    $nuVer = Get-Version $packageData.NuspecVersion
+    $rmVer = Get-Version $packageData.RemoteVersion
+    if ($rmVer -gt $nuVer) {
+      $verString = $packageData.RemoteVersion
+    } else {
+      $verString = $packageData.NuspecVersion
+    }
+
     Write-Host "Pushing ${packageName} ${verString} to Chocolatey"
     try {
       $packageFile = [System.String]::Join('.', $packageName, $verString, 'nupkg')
