@@ -41,7 +41,10 @@ function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
   $regex   = 'otvdm-.*\.zip$'
   $url     = $download_page.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
-  $version = $url -split 'v|.zip' | Select-Object -Last 1 -Skip 1
+
+  $verRE   = '/releases/tag/v(?<version>\d+(\.\d+)*)$'
+  $verTag  = $download_page.links | Where-Object href -Match $verRE | Select-Object -First 1 -Expand href
+  $version = $($verTag | Select-String $verRE).Matches.Groups[2].Value
 
   $url = $domain + $url
 
