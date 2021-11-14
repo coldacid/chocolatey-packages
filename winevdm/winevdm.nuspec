@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>winevdm</id>
-    <version>0.7.0</version>
+    <version>0.8.0</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
@@ -31,8 +31,8 @@ Open File dialog.
 This package also includes the Wine port of the WinHelp app for any applications
 which use old-style WinHelp `.hlp` files for documentation.
 ]]></description>
-    <releaseNotes>https://github.com/otya128/winevdm/releases/tag/v0.7.0</releaseNotes>
-    <licenseUrl>https://raw.githubusercontent.com/otya128/winevdm/v0.7.0/LICENSE</licenseUrl>
+    <releaseNotes>https://github.com/otya128/winevdm/releases/tag/v0.8.0</releaseNotes>
+    <licenseUrl>https://raw.githubusercontent.com/otya128/winevdm/v0.8.0/LICENSE</licenseUrl>
     <!-- =============================== -->
 
     <dependencies>

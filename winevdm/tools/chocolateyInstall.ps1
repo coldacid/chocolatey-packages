@@ -6,7 +6,7 @@ if (!(Test-ProcessAdminRights)) {
 
 $packageName= 'winevdm'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$zip        = 'otvdm-v0.7.0.zip'
+$zip        = 'otvdm-v0.8.0.zip'
 
 $packageArgs = @{
   packageName    = $packageName
@@ -38,6 +38,11 @@ foreach ($exe in $exes) {
   }
   New-Item "$exe.ignore" -Type File -Force | Out-Null
 }
+# Tell ShimGen to ignore .exe16 files as well
+$exe16s = Get-ChildItem $toolsDir -Include *.exe16 -Recurse
+foreach ($exe16 in $exe16s) {
+  New-Item "$exe16.ignore" -Type File -Force | Out-Null
+}
 
 function New-Vdm {
   param (
@@ -49,11 +54,11 @@ function New-Vdm {
     New-Item -Path $RegistryKey -Force
   }
 
-  New-ItemProperty -Path $RegistryKey -Name CommandLine -Value ' --ntvdm64: "%m" --ntvdm64-args: %c'
-  New-ItemProperty -Path $RegistryKey -Name InternalName -Value '*'
-  New-ItemProperty -Path $RegistryKey -Name ProductName -Value '*'
-  New-ItemProperty -Path $RegistryKey -Name ProductVersion -Value '*'
-  New-ItemProperty -Path $RegistryKey -Name MappedExeName -Value $ExePath
+  Set-ItemProperty -Path $RegistryKey -Name CommandLine -Value ' --ntvdm64: "%m" --ntvdm64-args: %c'
+  Set-ItemProperty -Path $RegistryKey -Name InternalName -Value '*'
+  Set-ItemProperty -Path $RegistryKey -Name ProductName -Value '*'
+  Set-ItemProperty -Path $RegistryKey -Name ProductVersion -Value '*'
+  Set-ItemProperty -Path $RegistryKey -Name MappedExeName -Value $ExePath
 }
 
 New-Vdm -RegistryKey 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NtVdm64\0OTVDM' -ExePath $otvdm

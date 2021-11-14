@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-   https://github.com/otya128/winevdm/releases/download/v0.7.0/otvdm-v0.7.0.zip
+   https://github.com/otya128/winevdm/releases/download/v0.8.0/otvdm-v0.8.0a.zip
 
    to download the installer.
 
@@ -15,11 +15,11 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum: B07EF931FBFA8184250F9192823DEDD5B8A0AA299D4B92DBDBBEA8E005C9F8BC
+   checksum: 514488577980375CC197267C1828E85E111C40BD39EB5BAE41EB5B4654332D75
 
 Using AU:
 
-   Get-RemoteChecksum https://github.com/otya128/winevdm/releases/download/v0.7.0/otvdm-v0.7.0.zip
+   Get-RemoteChecksum https://github.com/otya128/winevdm/releases/download/v0.8.0/otvdm-v0.8.0a.zip
 
 File 'license.txt' is obtained from:
-   https://raw.githubusercontent.com/otya128/winevdm/v0.7.0/LICENSE.md
+   https://raw.githubusercontent.com/otya128/winevdm/v0.8.0/LICENSE.md
