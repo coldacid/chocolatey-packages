@@ -2,8 +2,8 @@
 
 $packageName= 'git-sizer'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$zip32 = 'git-sizer-1.4.0-windows-386.zip'
-$zip64 = 'git-sizer-1.4.0-windows-amd64.zip'
+$zip32 = 'git-sizer-1.5.0-windows-386.zip'
+$zip64 = 'git-sizer-1.5.0-windows-amd64.zip'
 
 $packageArgs = @{
   packageName    = $packageName
