@@ -31,12 +31,9 @@ Get-AUPackages | ForEach-Object {
 
   if ($packageErr -ne $null) {
     Write-Error "Failed to update ${packageName}: $packageErr"
-    Pop-Location
-    continue
   }
-
   # Check if package has been updated, and push the new version if so
-  if ($packageData.Updated -eq $true) {
+  elseif ($packageData.Updated -eq $true) {
     # Deal with the version properties being wishy-washy about which is newer
     $nuVer = Get-Version $packageData.NuspecVersion
     $rmVer = Get-Version $packageData.RemoteVersion
