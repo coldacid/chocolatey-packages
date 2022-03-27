@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>winevdm</id>
-    <version>0.8.0</version>
+    <version>0.8.1</version>
     <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk</owners>
     <!-- ============================== -->
