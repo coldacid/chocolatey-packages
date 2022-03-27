@@ -46,13 +46,16 @@ function global:au_GetLatest {
   $verTag  = $download_page.links | Where-Object href -Match $verRE | Select-Object -First 1 -Expand href
   $version = $($verTag | Select-String $verRE).Matches.Groups[2].Value
 
-  $url = $domain + $url
+  if (!$url.StartsWith($domain)) { $url = $domain + $url }
 
   $releaseNotesUrl = "$domain/otya128/winevdm/releases/tag/v" + $version
   $licenseUrl = 'https://raw.githubusercontent.com/otya128/winevdm/v' + $version + '/LICENSE'
 
+  $trueVerRE = 'otvdm-v?(?<version>\d+(\.\d+)*)\.zip$'
+  $trueVersion = $($url | Select-String $trueVerRE).Matches.Groups[2].Value;
+
   return @{
-    Version = $version
+    Version = $trueVersion
 
     URL = $url
     Zip = Split-Path $url -Leaf
