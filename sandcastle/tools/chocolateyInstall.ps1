@@ -15,6 +15,7 @@ $tempDir       = Join-Path $chocTempDir "$packageName"
 
 $zipFile = Join-Path $tempDir ('SHFBInstaller_v' + $versionNumber + '.zip')
 $zipDir = Join-Path $toolsPath ('SHFBInstaller_v' + $versionNumber)
+$pkgDir = Join-Path $zipDir "InstallResources"
 
 Get-ChocolateyWebFile "$packageName" "$zipFile" "$url" `
                       -Checksum "$checksum" -ChecksumType "$checksumType"
@@ -23,16 +24,13 @@ Get-ChocolateyUnzip "$zipFile" "$zipDir"
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'MSI' # only one of these: exe, msi, msu
-  file           = $(Join-Path $zipDir "InstallResources\SandcastleHelpFileBuilder.msi")
+  file           = $(Join-Path $pkgDir "SandcastleHelpFileBuilder.msi")
 
   silentArgs     = '/quiet'
   validExitCodes = @(0, 3010, 1641) # please insert other valid exit codes here, exit codes for ms http://msdn.microsoft.com/en-us/library/aa368542(VS.85).aspx
   softwareName   = 'Sandcastle*' #ensure this is the value in the registry
 }
 Install-ChocolateyInstallPackage @packageArgs
-
-# Install-ChocolateyVsixPackage requires a URL, so build one out of the file path
-$vsix = Join-Path $zipDir "InstallResources\SHFBVisualStudioPackage_VS2017AndLater.vsix"
 
 # Install-ChocolateyVsixPackage doesn't let us provide a list of supported versions for a package, unfortunately
 # Check for each version supported by the Sandcastle tools VSIX and call the function repeatedly as needed
@@ -45,6 +43,10 @@ Get-VisualStudio | Where-Object { $_.installationVersion.Major -ge 15 } | ForEac
 
   # Otherwise VSIXInstaller.exe exits with error code 2003: NoApplicableSKUsException
   if ( $_.installationVersion.Major -eq 15 ) { $vsver = '15.0' }
+
+  # Set path for the VSIX package for the current Visual Studio version
+  if ( $_.installationVersion.Major -le 16 ) { $vsix = Join-Path $pkgDir "SHFBVisualStudioPackage_VS2017And2019.vsix" }
+  else { $vsix = Join-Path $pkgDir "SHFBVisualStudioPackage_VS2022AndLater.vsix" }
 
   Write-Host "    SKU is '$vssku'"
   Write-Host "    Installation path is " $_.installationPath
