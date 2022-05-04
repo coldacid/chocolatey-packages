@@ -2,8 +2,8 @@
 
 $packageName= 'gron'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$zip32 = 'gron-windows-386-0.6.1.zip'
-$zip64 = 'gron-windows-amd64-0.6.1.zip'
+$zip32 = 'gron-windows-386-0.7.1.zip'
+$zip64 = 'gron-windows-amd64-0.7.1.zip'
 
 $packageArgs = @{
   packageName    = $packageName

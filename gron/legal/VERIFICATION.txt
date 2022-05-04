@@ -7,8 +7,8 @@ Package can be verified like this:
 
 1. Go to
 
-   x32: https://github.com/tomnomnom/gron/releases/download/v0.6.1/gron-windows-386-0.6.1.zip
-   x64: https://github.com/tomnomnom/gron/releases/download/v0.6.1/gron-windows-amd64-0.6.1.zip
+   x32: https://github.com/tomnomnom/gron/releases/download/v0.7.1/gron-windows-386-0.7.1.zip
+   x64: https://github.com/tomnomnom/gron/releases/download/v0.7.1/gron-windows-amd64-0.7.1.zip
 
    to download the installer.
 
@@ -16,13 +16,13 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 0DE1F46F693B36B1C1A3B6AF2D013B3D1DB1EE7E49E00D4DBAFD58200E3704E2
-   checksum64: 50747640A28C46AFFD71C1DCB44B31772FACC38A9A95BCD22077E141095E8B45
+   checksum32: A532D5AA29395592F3725C336640F2CF9EB670C8CE25115AAEE0082D5CDF5A0E
+   checksum64: 5ED427A4A504D8E03A1770B71D4AD16A3764179E085B5AE84E51A57B299F300D
 
 Using AU:
 
-   Get-RemoteChecksum https://github.com/tomnomnom/gron/releases/download/v0.6.1/gron-windows-386-0.6.1.zip  # 32-bit
-   Get-RemoteChecksum https://github.com/tomnomnom/gron/releases/download/v0.6.1/gron-windows-amd64-0.6.1.zip  # 64-bit
+   Get-RemoteChecksum https://github.com/tomnomnom/gron/releases/download/v0.7.1/gron-windows-386-0.7.1.zip  # 32-bit
+   Get-RemoteChecksum https://github.com/tomnomnom/gron/releases/download/v0.7.1/gron-windows-amd64-0.7.1.zip  # 64-bit
 
 File 'license.txt' is obtained from:
-   https://raw.githubusercontent.com/tomnomnom/gron/v0.6.1/LICENSE
+   https://raw.githubusercontent.com/tomnomnom/gron/v0.7.1/LICENSE
