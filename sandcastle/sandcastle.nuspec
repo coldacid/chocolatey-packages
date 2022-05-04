@@ -19,7 +19,7 @@ The Sandcastle Help File Builder was created to fill in the gaps, provide the mi
     <docsUrl>http://ewsoftware.github.io/SHFB</docsUrl>
     <bugTrackerUrl>https://github.com/EWSoftware/SHFB/issues</bugTrackerUrl>
     <projectSourceUrl>https://github.com/EWSoftware/SHFB</projectSourceUrl>
-    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
+    <packageSourceUrl>https://github.com/coldacid/chocolatey-packages/</packageSourceUrl>
     <copyright>Eric Woodruff (c) 2006-2020</copyright>
     <tags>SHFB documentation sandcastle help XML comments file builder admin</tags>
     <dependencies>

@@ -5,7 +5,7 @@
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>winvice</id>
     <version>3.1</version>
-    <packageSourceUrl>https://bitbucket.org/coldacid/chocolatey-packages/</packageSourceUrl>
+    <packageSourceUrl>https://github.com/coldacid/chocolatey-packages/</packageSourceUrl>
     <owners>Chris Charabaruk, Roger Wilson</owners>
     <!-- ============================== -->
 
