@@ -11,7 +11,7 @@ $packageArgs = @{
   unzipLocation = $toolsDir
   fileType      = 'EXE'
 
-  silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-' # Inno Setup
+  silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /ALLUSERS /SP-' # Inno Setup
   validExitCodes= @(0)
 
   softwareName  = 'pgAdmin 4'
