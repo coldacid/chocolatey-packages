@@ -15,15 +15,16 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex   = '(?:/pgadmin/pgadmin4/v)(\d+(\.\d+)+)(?:/windows)'
-  $url     = $download_page.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
-  $version = $url -replace ".*v(\d+(\.\d+)*).*",'$1'
+  $download_page        = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $regex                = '(?:/pgadmin/pgadmin4/v)(\d+(\.\d+)+)(?:/windows)'
+  $url                  = $download_page.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
+  $version              = $url -replace ".*v(\d+(\.\d+)*).*",'$1'
+  $releaseNotesVersion  = $version.replace(".", "_")
 
   Write-Host $url $version
 
   $url64 = "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v${version}/windows/pgadmin4-${version}-x64.exe"
-  $releaseNotesUrl = "https://www.pgadmin.org/docs/pgadmin4/${version}/release_notes_${version}.html"
+  $releaseNotesUrl = "https://www.pgadmin.org/docs/pgadmin4/${version}/release_notes_${releaseNotesVersion}.html"
 
   return @{
     Version = $version
